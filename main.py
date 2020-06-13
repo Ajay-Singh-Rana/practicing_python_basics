@@ -59,12 +59,43 @@ print(two_dimensional_list_2,"\n")
 list_1 = [x for x in range(20)]
 print(list_1)
 
+# sets
+"""
+    sets are data types that hold unique data elements.
+"""
+# creating a set 
+set_1 = set([1,2,3,4,5])
+print(set_1)
+# creating a set from an existing list
+list_1 = [1,1,2,2,2,3,4,5,6,7,7]
+set_2 = set(list_1)
+print(set_2)
+# functions that can be performed on sets
+# addiing elements
+set_1.add(6)    # adds a new element to the set if it doesn't exist already
+print(set_1)
+# emptying a set
+set_1.clear()
+print(set_1)
+
 # tuples
 """
     tuples are similar to lists with the only difference being that tuples are immutable i.e. cant be changed once created.
 """
 empty_tuple = ()
-empyt_tuple_2 = tuple()
+empty_tuple_2 = tuple()
+print(empty_tuple)
+print(empty_tuple_2)
+tuple_1 = (1,2,3,4)
+tuple_2 = tuple([1,2,3,4,5,6,7])
+print(tuple_1)
+print(tuple_2)
+
+# dictionaries
+"""
+    Dictionaries are key value pairs where values are accessed with the help of keys.//These are of immutable type.
+"""
+dictionary_example = {"True":1,"False":2,"I":"Fool"}
 
 # operators like '+','-','x' are used to conduct calculations .These are also provided by programming languages
 
