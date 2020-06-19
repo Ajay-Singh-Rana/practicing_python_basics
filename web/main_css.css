@@ -1,0 +1,116 @@
+body{
+    background-color : rgba(53,54,58,0.2);
+}
+
+/* styles for the heading h2*/
+.title{
+    font-family : monospace;
+    /* font-size :  */
+    text-align : center;
+    font-size : 32px;
+    color : rgba(0,0,0,0.6);
+}
+
+/* installation style */
+.installation{
+    background-color : rgba(120,210 ,22,0.4);
+    color : rgba(0,0,0,0.7);
+    font-style : italic;
+    padding : 10px;
+    padding-left : 20px;
+    margin : 20px;
+    max-width : 600px;
+}
+
+/* style for the heading h3 */
+.heading{
+    font-family : lobster, monospace;
+    font-size : 22px;
+    color : rgba(53, 2, 27, 0.959)
+}
+
+/* style for the content-box */
+.content-box{
+    color : maroon;
+    text-align : left;
+    padding : 20px;
+    padding-bottom : 10px;
+    margin-left : 10px;
+    font-weight : bold;
+    font-style : italic;
+    font-size :15px;    
+    font-family : monospace;
+}
+
+/* style for the navigation bar */
+#navbar{
+    text-align : right;
+    background-color : rgba(0,0,0,0.7);
+    color : rgba(255,255,255,0.7);
+    padding : 10px;
+}
+
+.navbar{
+    color : inherit;
+    padding : 10px;
+    text-decoration : inherit;
+}
+/* style 1 for the code area */ 
+.code-box{
+    background-color : rgba(53,54,58,0.2);
+    border-left : 3px Solid Green;
+    padding : 10px;
+    padding-left : 20px;
+    margin : 10px;
+    margin-left : 20px;
+    max-width: 600px;
+    font-size : 14px;
+    font-weight : bold;
+    font-style : italic;
+    color : rgb(0,0,0,0.7);
+}
+
+/*style 2 for the code area */
+.code-box-2{
+    background-color : rgba(35, 65, 57, 0.2);
+    border-left : 3px Solid purple;
+    padding : 10px;
+    padding-left : 20px;
+    margin : 10px;
+    margin-left : 20px;
+    max-width : 600px;
+    font-size : 14px;
+    font-weight : bold;
+    font-style : italic;
+    color : rgba(0,0,0,0.7);
+}
+
+/* style 1 for the output area */
+.results-box{
+    background-color : rgba(12,34,255,0.2);
+    font-size : 14px;
+    font-style : italic;
+    color : rgba(0,0,0,0.7);
+    max-width : 600px;
+    padding : 10px;
+    padding-left : 20px;
+    font-weight : bold;
+    border-left : 3px Solid rgb(139, 81, 247);
+    margin : 10px;
+    margin-left : 20px;
+}
+
+/* style 2 for the result area */
+.results-box-2{
+    background-color : rgba(0,250,25,0.2);
+    border-left : 3px Solid rgba(255,128,25,1);
+    padding : 10px;
+    padding-left : 20px;
+    margin : 10px;
+    margin-left : 20px;
+    font-size : 14px;
+    font-style : italic;
+    font-weight : bold;
+    max-width : 600px;
+    color : rgba(30,30,30,1)
+}
