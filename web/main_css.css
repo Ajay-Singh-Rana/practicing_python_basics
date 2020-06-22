@@ -62,8 +62,8 @@ body{
     padding : 10px;
     padding-left : 20px;
     margin : 10px;
-    margin-left : 20px;
-    max-width: 600px;
+    margin-left : 50px;
+    width : auto;
     font-size : 14px;
     font-weight : bold;
     font-style : italic;
@@ -77,8 +77,8 @@ body{
     padding : 10px;
     padding-left : 20px;
     margin : 10px;
-    margin-left : 20px;
-    max-width : 600px;
+    margin-left : 50px;
+    max-width : 800px;
     font-size : 14px;
     font-weight : bold;
     font-style : italic;

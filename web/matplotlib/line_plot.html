@@ -23,7 +23,28 @@
             </div>
         </div>
         <div class="content-box">
-            <h3 class="heading"using the file</h3>
+            <h3 class="heading">Plotting lines with matplotlib</h3>
+        </div>
+        <div class="code-box">
+            <code>
+                from matplotlib import pyplot as plt&nbsp;&nbsp;&nbsp;&nbsp;# importing the plotting library<br/>
+                
+                plt.xkcd()&nbsp;&nbsp;&nbsp;&nbsp;# using the xkcd style to get plots which appear to be hand-drawn<br/>
+                age = [25,26,27,28,29,30,<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31,32,33,34,35]&nbsp;&nbsp;&nbsp;&nbsp;# age data to be plotted<br/>
+                median_salary_for_all = [38496,42000,46752,49320,53200,56000,62366,64928,67317,68748,73752]&nbsp;# salary data to be plotted<br/>
+                
+                plt.plot(age,median_salary_for_all,color="#2a8bdc",label=""Median Salary)&nbsp;&nbsp;&nbsp;&nbsp;# plt.plot() is used to draw line plots<br/>
+             
+                plt.legend()&nbsp;&nbsp;&nbsp;&nbsp;# to display the labels<br/>
+                
+                plt.show()<br/>
+            </code>
+            <p>This generates the following graph -</p>
+            <figcaption>
+                <img src="line_plot.png" alt="Line plot"/>
+                Line Plots
+            </figcaption>
         </div>
     </body>
 </html>
