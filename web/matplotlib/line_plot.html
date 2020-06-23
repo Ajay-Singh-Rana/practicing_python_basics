@@ -8,8 +8,8 @@
     </head>
     <body>
         <nav id="navbar">
-            <a class="navbar">Home</a>
-            <a class="navbar">Numpy</a>
+            <a class="navbar" href="../python_basics_1.html">Home</a>
+            <a class="navbar" href="../numpy/numpy_tutorial_1.html">Numpy</a>
             <a class="navbar" href="#">Matplotlib</a>
             <a class="navbar" href="#">Tkinter</a>
         </nav>
@@ -27,24 +27,31 @@
         </div>
         <div class="code-box">
             <code>
-                from matplotlib import pyplot as plt&nbsp;&nbsp;&nbsp;&nbsp;# importing the plotting library<br/>
-                
-                plt.xkcd()&nbsp;&nbsp;&nbsp;&nbsp;# using the xkcd style to get plots which appear to be hand-drawn<br/>
-                age = [25,26,27,28,29,30,<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31,32,33,34,35]&nbsp;&nbsp;&nbsp;&nbsp;# age data to be plotted<br/>
-                median_salary_for_all = [38496,42000,46752,49320,53200,56000,62366,64928,67317,68748,73752]&nbsp;# salary data to be plotted<br/>
-                
-                plt.plot(age,median_salary_for_all,color="#2a8bdc",label=""Median Salary)&nbsp;&nbsp;&nbsp;&nbsp;# plt.plot() is used to draw line plots<br/>
-             
-                plt.legend()&nbsp;&nbsp;&nbsp;&nbsp;# to display the labels<br/>
-                
+                from matplotlib import pyplot as plt <span class="comments"> # importing the plotting library</span><br/>
+                <br/>
+                plt.xkcd() <span class="comments"> # using the xkcd style to get plots which appear to be hand-drawn</span><br/>
+                <br/>
+                age = [25,26,27,28,29,30,31,32,33,34,35] <span class="comments"> # age data to be plotted</span><br/>
+                median_salary_for_all = [38496,42000,46752,49320,53200,56000,62366,64928,67317,68748,73752] <span class="comments"> # salary data to be plotted</span><br/>
+                <br/>
+                plt.plot(age,median_salary_for_all,color="#2a8bdc",label="Median Salary") <span class="comments"> # plt.plot() is used to draw line plots</span><br/>
+                <br/>
+                plt.legend() <span class="comments"> # to display the labels</span><br/>
+                <br/>
                 plt.show()<br/>
             </code>
+        </div>
+        <div class="content-box">
             <p>This generates the following graph -</p>
             <figcaption>
-                <img src="line_plot.png" alt="Line plot"/>
+                <img class="img-container" src="line_plot.png" alt="Line plot"/>
                 Line Plots
             </figcaption>
+        </div>
+        <div class="small-snippet">
+            <code>
+                Hey There
+            </code>
         </div>
     </body>
 </html>
