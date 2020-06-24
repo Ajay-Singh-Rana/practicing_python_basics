@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Window and the Label widget 
+        </title>
+        <link rel="stylesheet" type="text/css" href="../main_css.css"/>
+    </head>
+    <body>
+        <nav id="navbar">
+            <a class="navbar" href="#">Home</a>
+            <a class="navbar" href="../python_basics_1.html">Python</a>
+            <a class="navbar" href="../numpy/numpy_tutorial_1.html">Numpy</a>
+            <a class="navbar" href="../matplotlib/line_plot.html">Matplotlib</a>
+        </nav>
+        <div class="content-box">
+            <h2 class="title">Tkinter Window and the Label widget</h2>
+            <h3 class="heading">Creating a Tkinter window</h3>
+        </div>
+        <div class="code-box-2">
+            <code lang="Python">
+                import tkinter as tk <span class="comments"># importing the <b>tkinter</b> library with the alias name <b>tk</b></span><br/>
+                <br/>window = tk.Tk() <span class="comments"># calling the <b>Tk()</b> method creates a window</span><br/>
+                window.title("Our First Window") <span class="comments"># setting the title of the window</span><br/>
+                window.geometry("350x300") <span class="comments"># a string of <b>"widthxheight"</b> is passed to tell the size of the window</span><br/>
+                <br/>window.mainloop() <span class="comments"># the <b>mainloop()</b> method listens for events until the widnow is closed</span>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>Firstly, to use the <b>tkinter</b> library we need to import it. The line <code class="line-of-code">import tkinter as tk</code> does the importing task.</p>
+            <p>Now, to create a window, the <b>tkinter</b> library provides a method <b>Tk()</b>.The line <code class="line-of-code">window = tk.Tk()</code> calls the mehthod <b>Tk()</b> to create a window.</p>
+            <p>Fianlly, the line of code <code class="line-of-code">window.mainloop()</code> listens for window events (such as button clicks or a keypress) until the window is not closed.</p>
+        </div>
+        <div class="img-container">
+            <img src="window.jpeg" style="padding-left:250px;" alt="window"/>
+        </div>
+        <div class="content-box">
+            <h3 class="heading">Label Widget</h3>
+            <p>The <b>Label</b> widget is a text and image container in tkinter. It is used to add text/images to the main window. Though the text can be displayed in a single font but the text can span multiple lines.</p>
+            <p>The <span class="line-of-code">Label(master,**options)</span> method is used to create labels. Here, <b>master</b> is the name of the root window where the label is to be added.</p>
+        </div>
+        <div class="code-box">
+            <code >
+                import tkinter as tk <span class="comments"># importing the tkinter library</span><br/>
+                window = tk.Tk() <span class="comments"># creating the tkinter window</span><br/>
+                <br/>
+                textLabel = tk.Label(window,text="Hey There!",fg="red") <span class="comments"># creating a Label</span><br/>
+                textLabel.pack() <span class="comments"># adding the label to the main window with the help of <b>pack()</b> geomemtry manager</span><br/>
+                <br/>
+                window.mainloop() <span class="comments"># running the mainloop</span>
+            </code>
+        </div>
+        <div class='img-container'>
+            <img src="label_.jpeg" alt="Text label in tkinter" style="padding-left:250px;"/>
+        </div>
+        <div class="content-box">
+            <h4>Other parameters for the Label widget :</h4>
+            <table class="cells">
+                <th>Parameters</th>
+                <th>Function</th>
+                <tr>
+                    <td>bg</td>
+                    <td>Provides the widget a background color.</td>
+                </tr>
+            </table>
+        </div>
+        </body>
+</html>

@@ -154,3 +154,10 @@ body{
     font-size : 14px;
     font-family : monospace; 
 }
+
+/* style for single lines of code */
+.line-of-code{
+    background-color : rgba(100,0,255,0.3);
+    padding : 4px;
+    font-weight : bolder;
+}
