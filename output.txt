@@ -1,4 +1,0 @@
-Part 1 ->
-    18 is of the type <class 'int'>
-    'The only thing that is constant is 'change'.' is of the type <class 'str'>
-    34.56 is of the type <class 'float'>
