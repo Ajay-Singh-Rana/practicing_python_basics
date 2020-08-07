@@ -45,9 +45,11 @@ body{
 /* style for the navigation bar */
 #navbar{
     text-align : right;
-    background-color : rgba(0,0,0,0.7);
+    background-color : rgba(0,0,0,0.8);
     color : rgba(255,255,255,0.7);
     padding : 10px;
+    position : sticky;
+    top : 0px;
 }
 
 .navbar{
@@ -55,6 +57,7 @@ body{
     padding : 10px;
     text-decoration : inherit;
 }
+
 /* style 1 for the code area */ 
 .code-box{
     background-color : rgba(53,54,58,0.2);
@@ -68,6 +71,7 @@ body{
     font-weight : bold;
     font-style : italic;
     color : rgb(0,0,0,0.7);
+    overflow : auto;
 }
 
 /* style for comments */
@@ -78,6 +82,11 @@ body{
     padding-left : 20px;
 }
 
+.startOfTheLineComments{
+    color : rgba(0, 25, 253, 0.9);
+    font-style : normal;
+    font-weight : normal;
+}
 /* style 2 for the code area */
 .code-box-2{
     background-color : rgba(35, 65, 57, 0.2);
@@ -91,13 +100,19 @@ body{
     font-weight : bold;
     font-style : italic;
     color : rgba(0,0,0,0.7);
+    overflow : auto;
 }
 
+figure{
+    text-align : center;
+    max-width : 500px;
+    margin : auto;
+}
 /* style for image container */
 .img-container{
-    padding-left : 250px;
-    height :440px;
-    width : 650px;
+    /* padding-left : 250px; */
+    height :300px;
+    width : 450px;
 }
 
 /* style for small code snippets */
@@ -145,10 +160,24 @@ body{
     color : rgba(0,0,0,0.7)
 }
 
+.downloadSection{
+    /* background-color : Black; */
+    max-width : 500px;
+    margin : 10px auto 20px auto;
+    text-align : center;
+}
+
+.downloadSection img{
+    max-width:40px;
+    max-height:40px;
+    margin : 4px auto 4px auto;
+    padding : 0px 35px 0px 35px;
+}
+
 /* style for buttons */
 .btn{
     padding : 10px;
-    text-align : Center;
+    text-align : center;
     color : White;
     background-color : rgb(54, 231, 54);
     font-size : 14px;

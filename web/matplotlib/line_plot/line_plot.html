@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Line Plots
+        </title>
+        <link rel="stylesheet" type="text/css" href="../../main_css.css"/>
+    </head>
+    <body>
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/python_basics_1.html">Python</a>
+            <a class="navbar" href="../../numpy/numpy_tutorial_1.html">Numpy</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <div class="content-box">
+            <h2 class="title">Line Plots</h2>
+            <div class="downloadSection">
+                <a href="../../../notebooks/matplotlib/fill_betweens.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Notebook"  src="../../images/jupyter.svg"/></a>
+                <a href="../../../matplotlib_tutorial/line_plotting.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+            </div>
+            <p>To draw a plot there's not a lot we need to do, it is just about performing a few simple steps. The only thing we need to worry about is the source of data and the clarity of the data we are going to plot.<br/>
+            Here is how we can draw the very first of our plots.
+            Importing all the libraries required to draw plots (matplotlib) and work with data (numpy).</p>
+        </div>
+        <div class="content-box">
+            <h3 class="heading">Plotting lines with matplotlib</h3>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="startOfTheLineComments"># imports</span><br/>
+                from matplotlib import pyplot as plt <span class="comments"> # can also be imported as "import matplotlib.pyplot as plt</span><br/>
+                import numpy as np
+            </code>
+        </div>
+        <div class="content-box">
+            <p>Notes : 1. Importing pyplot as plt is kind of a standard but one can use any name instead of plt that suits them better.<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Importing numpy as np is also a standard and can also be replaced with any name that suits the programmer.
+            </p>
+            <br/>
+            <p>Writing down the data to be plotted.</p>
+        </div>
+                <span class="startOfTheLineComments"># data to be plotted</span><br/>
+                years = np.array([2010,2011,2012,2013,2014,2015,2016,2017,2018,2019])<br/>
+                cars_sold = np.array([200000,500000,300000,450000,550000,600000,500000,450000,650000,600000])<br/>
+                two_wheelers_sold = np.array([500000,600000,700000,750000,400000,400000,350000,300000,400000,500000])<br/>
+                <br/>
+                <span class="startOfTheLineComments"># plotting the data for the cars</span><br/>
+                plt.plot(years,cars_sold,color="Blue",label="Cars Sold")<br/>
+                <br/>
+                <span class="startOfTheLineComments"># plotting the data for two wheelers</span><br/>
+                plt.plot(years,two_wheelers_sold,color="Red",linestyle=":",label="Two Wheelers Sold")<br/>
+                <br/>
+                plt.legend()<br/>
+                plt.tight_layout()<br/>
+                plt.xticks(ticks=years,labels=years)<br/>
+                plt.xlabel("Years")<br/>
+                plt.ylabel("Sales")<br/>
+                plt.title("Distribution of Sales per Year")<br/>
+                plt.show()<br/>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>This generates the following plot -&gt;</p>
+            <figure>    
+                <figcaption>
+                    <img class="img-container" src="line_plot_1.png" alt="Line plot"/><br/>
+                    Line Plots
+                </figcaption>
+            </figure>
+        </div>
+        <div class="code-box-2">
+            <code>
+                plt.plot(years,cars_sold,"ro-.",label="Cars Sold")<br/>
+                plt.legend()<br/>
+                plt.title("Car sales distribution over 10 years")<br/>
+                plt.xlabel("Years")<br/>
+                plt.ylabel("Cars Sold")<br/>
+                plt.show()<br/>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>The above code generates the following plot -&gt;</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="line_plot_2.png" alt="Line plot with fmt strings"/>
+                    <br/>
+                    Line plot using fmt string
+                </figcaption>
+            </figure>
+        </div>
+    </body>
+</html>
