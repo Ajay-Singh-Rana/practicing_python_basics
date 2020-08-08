@@ -16,7 +16,7 @@
         <div class="content-box">
             <h2 class="title">Line Plots</h2>
             <div class="downloadSection">
-                <a href="../../../notebooks/matplotlib/fill_betweens.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Notebook"  src="../../images/jupyter.svg"/></a>
+                <a href="../../../notebooks/matplotlib/fill_betweens.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Noteboojk"  src="../../images/jupyter.svg"/></a>
                 <a href="../../../matplotlib_tutorial/line_plotting.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
             </div>
             <p>To draw a plot there's not a lot we need to do, it is just about performing a few simple steps. The only thing we need to worry about is the source of data and the clarity of the data we are going to plot.<br/>
@@ -28,7 +28,7 @@
         </div>
         <div class="code-box">
             <code>
-                <span class="startOfTheLineComments"># imports</span><br/>
+                <span class="startOfTheLineComments"># imports</span>
                 from matplotlib import pyplot as plt <span class="comments"> # can also be imported as "import matplotlib.pyplot as plt</span><br/>
                 import numpy as np
             </code>
@@ -40,15 +40,55 @@
             <br/>
             <p>Writing down the data to be plotted.</p>
         </div>
-                <span class="startOfTheLineComments"># data to be plotted</span><br/>
+        <div class="code-box-2">
+            <code>
+                <span class="startOfTheLineComments"># data to be plotted</span>
                 years = np.array([2010,2011,2012,2013,2014,2015,2016,2017,2018,2019])<br/>
                 cars_sold = np.array([200000,500000,300000,450000,550000,600000,500000,450000,650000,600000])<br/>
                 two_wheelers_sold = np.array([500000,600000,700000,750000,400000,400000,350000,300000,400000,500000])<br/>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>Plotting the data using the <b>plot()</b> method of matplotlib's pyplot module.</p>
+            <p>The syntax for the plot method is as follows :</p>
+            <code class="line-of-code">plot(x_axis,y_axis,color="Value",label="label",linestyle="style")</code>
+            <p>This method draws a line plot based on the values of <em>x_axis</em> and <em>y_axis</em> arguments.<br/>
+            The line plotted takes the color from the value specified for the color variable and the style of the line is picked form the style defined with the linestyle argument.<br/>
+            There are a number of color values that can be passed including the hexadecimal values.<br/>
+            And the following line styles can be used :</p>
+            <ul>
+                <li>":"</li>
+                <li>"-"</li>
+                <li>"--"</li>
+                <li>"-."</li>
+            </ul>
+            <p>The plot can be given a nicer look, i.e. enhancing the details it provides by providing the abscissa and ordinate with labels that can represent their purpose as well as giving the plot a name.</p>
+            <ul>
+                <li><strong><em>plt.legend()</em></strong> helps displaying the labels that were passed to the <b>plot()</b> method.</li>
                 <br/>
-                <span class="startOfTheLineComments"># plotting the data for the cars</span><br/>
+                <li><strong><em>plt.title(name)</em></strong> provides the plot a title.</li>
+                <br/>
+                <li><strong><em>plt.xlabel(name)</em></strong> gives the x-axis a name (or label).</li>
+                <br/>
+                <li><strong><em>plt.ylabel(name)</em></strong> assigns the y-axis with a name.</li>
+                <br/>
+                <li><strong><em>plt.tight_layout</em></strong> auto adjusts the padding for the plot.</li>
+                <br/>
+                <li><strong><em>plt.xticks(ticks,label)</em></strong> sets the tick location and labels for x-axis.</li>
+                <br/>
+                <li><strong><em>plt.yticks(ticks,label)</em></strong> sets the tick location and labels for y-axis.</li>
+                <br/>
+                <li><strong><em>plt.savefig(name)</em></strong> saves the generated plot as an image in the current directory or to the path provided with the specified name.</li>
+                <br/>
+                <li><strong><em>plt.show()</em></strong> displays the plot.</li>
+            </ul>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="startOfTheLineComments"># plotting the data for the cars</span>
                 plt.plot(years,cars_sold,color="Blue",label="Cars Sold")<br/>
                 <br/>
-                <span class="startOfTheLineComments"># plotting the data for two wheelers</span><br/>
+                <span class="startOfTheLineComments"># plotting the data for two wheelers</span>
                 plt.plot(years,two_wheelers_sold,color="Red",linestyle=":",label="Two Wheelers Sold")<br/>
                 <br/>
                 plt.legend()<br/>
@@ -69,9 +109,49 @@
                 </figcaption>
             </figure>
         </div>
+        <div class="content-box">
+            <p>That's all we really need to do to plot a very basic line plot. <br/>
+            Continue with the tutorial for learning to plot other types of plots. But before we leave we have a little trick to share with you:</p>
+            <h3 class="heading">Extras :):):)</h3>
+            <p>You can skip this but thats not a good choice...</p>
+
+            <h4>The <em>fmt</em> strings</h4>
+            <p>The <b>fmt</b> parameter is a convenient way for defining a basic formatting for the line like color,marker and linestyle.<br/>
+            A format string consists of a part for color, marker and line:</p>
+            <code class="line-of-code">fmt = '[marker][line][color]'</code><br/>
+            <p>Each of them is optional.<br/>
+            <b>Note:</b> If line is given, but no marker, tje plot will be a line without markers.
+            <strong>fmt = '[color][marker][line]'</strong> is also a supported format.</p>
+
+            <p>Markers that can be used:</p>
+            <ul>
+                <li>"." : <b>Point marker</b></li><br/>
+                <li>"," : <b>Pixel marker</b></li><br/>
+                <li>"o" : <b>Circle marker</b></li><br/>
+                <li>"v" : <b>Triangle down marker</b></li><br/>
+                <li>"^" : <b>Triangle up marker</b></li><br/>
+                <li>"&lt;" : <b>Triangle left marker</b></li><br/>
+                <li>"&gt;" : <b>Triangle right marker</b></li><br/>
+                <li>"1" : <b>Tri down marker</b></li><br/>
+                <li>"2" : <b>Tri up marker</b></li><br/>
+                <li>"3" : <b>Tri left marker</b></li><br/>
+                <li>"4" : <b>Tri right marker</b></li><br/>
+                <li>"s" : <b>Square marker</b></li><br/>
+                <li>"p" : <b>Pentagon marker</b></li><br/>
+                <li>"*" : <b>Star marker</b></li><br/>
+                <li>"h" : <b>Hexagon-1 marker</b></li><br/>
+                <li>"H" : <b>Hexagon-2 marker</b></li><br/>
+                <li>"+" : <b>Plus marker</b></li> <br/>
+                <li>"x" : <b>x marker</b></li><br/>
+                <li>"D" : <b>Diamond marker</b></li><br/>
+                <li>"d" : <b>Thin diamond marker</b></li><br/>
+                <li>"|" : <b>vline marker</b></li><br/>
+                <li>"_" : <b>hline marker</b></li>
+            </ul>
+        </div>
         <div class="code-box-2">
             <code>
-                plt.plot(years,cars_sold,"ro-.",label="Cars Sold")<br/>
+                plt.plot(years,cars_sold,"ro-.",label="Cars Sold")  <span class="comments"># "ro-." is an fmt string</span><br/>
                 plt.legend()<br/>
                 plt.title("Car sales distribution over 10 years")<br/>
                 plt.xlabel("Years")<br/>
@@ -88,6 +168,10 @@
                     Line plot using fmt string
                 </figcaption>
             </figure>
+            <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
         </div>
+        <footer>
+            <span><a class="footer" href="https://github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
+        </footer>
     </body>
 </html>
