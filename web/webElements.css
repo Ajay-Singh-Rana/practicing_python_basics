@@ -1,0 +1,118 @@
+/* h3avren */
+/* styles for the web elements */
+
+body{
+    background-color : rgba(53,54,58,0.2);
+    /* margin-bottom : -10px; */
+}
+
+/* styles for the heading h2*/
+.title{
+    font-family : monospace;
+    /* font-size :  */
+    text-align : center;
+    font-size : 32px;
+    color : rgba(0,0,0,0.6);
+}
+
+h4{
+    color : rgba(135, 15, 233, 0.959);
+}
+
+/* style for the heading h3 */
+.heading{
+    font-family : lobster, monospace;
+    font-size : 22px;
+    color : rgba(53, 2, 27, 0.959);
+}
+
+/* style for the content-box */
+.content-box{
+    color :  rgba(0, 25, 25, 0.9);
+    text-align : left;
+    padding : 20px;
+    padding-bottom : 10px;
+    margin-left : 10px;
+    /*font-weight : bold;*/
+    font-style : italic;
+    font-size :15px;    
+    font-family : monospace;
+}
+
+/* style for the navigation bar */
+#navbar{
+    text-align : right;
+    background-color : rgba(0,0,0,0.8);
+    color : rgba(255,255,255,0.7);
+    padding : 10px;
+    position : sticky;
+    top : 0px;
+}
+
+.navbar{
+    color : inherit;
+    padding : 10px;
+    text-decoration : inherit;
+}
+
+figure{
+    text-align : center;
+    max-width : 500px;
+    margin : auto;
+}
+
+/* style for image container */
+.img-container{
+    /* padding-left : 250px; */
+    height :300px;
+    width : 450px;
+}
+
+.downloadSection{
+    /* background-color : Black; */
+    max-width : 500px;
+    margin : 10px auto 20px auto;
+    text-align : center;
+}
+
+.downloadSection img{
+    max-width:40px;
+    max-height:40px;
+    margin : 4px auto 4px auto;
+    padding : 0px 35px 0px 35px;
+}
+
+/* style for buttons */
+.btn{
+    padding : 10px;
+    text-align : center;
+    color : White;
+    background-color : rgb(54, 231, 54);
+    font-size : 14px;
+    font-family : monospace; 
+}
+
+/*style for the table*/
+.cells{
+    padding : 10px;
+    margin : 20px;
+    background-color : rgba(214, 24, 129,0.5);
+    text-align : center;
+}
+
+footer{
+    background : rgba(26,26,26,0.9);
+    color : White;
+    position : relative;
+    bottom : 0px;
+    padding : 10px 20px 10px 20px;
+    margin : 8px -10px -20px -10px;
+    text-align : center;
+}
+
+a.footer {
+    text-decoration: none;
+    color : white;
+    padding : 5px 20px 5px 20px;
+    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
