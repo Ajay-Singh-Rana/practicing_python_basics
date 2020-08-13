@@ -30,19 +30,15 @@
 
 /* style for comments */
 .comments{
-    color : rgba(0, 25, 253, 0.9);
-    font-style : normal;
-    font-weight : normal;
-    padding-left : 20px;
+    color :  rgb(33, 104, 33);
+    padding-left : 15px;
 }
 
 /* style for lines of comments */
 .startOfTheLineComments{
     display : block;
-    color : rgba(0, 25, 253, 0.9);
-    font-style : normal;
-    font-weight : normal;
-}
+    color : rgb(33, 104, 33);
+} 
 
 /* style 2 for the code area */
 .code-box-2{
