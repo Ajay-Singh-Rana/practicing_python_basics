@@ -21,7 +21,7 @@
             <h1 class="title">Bar Plots</h1>
             <div class="downloadSection">
                 <a href="bar_plot.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Noteboojk"  src="../../images/jupyter.svg"/></a>
-                <a href="../../../matplotlib_tutorial/bar_plot.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+                <a href="bar_plot.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
             </div>
             <p>A bar plot is a plot that presents categorical data with rectangular bars with heights or lengths proportional to the values these represent.<br/>
             Or we could simply say,<b>a plot that represents the data using the rectangular bars is called a bar plot.</b><br/>
@@ -31,7 +31,7 @@
         </div>
         <div class="code-box">
             <code>
-                <span class="startOfTheLineComments"># imports</span>
+                <span class="lineComments"># imports</span>
                 <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
                 <span class="orange">import</span> numpy <span class="orange">as</span> np        
             </code>
@@ -41,11 +41,11 @@
         </div>
         <div class="code-box-2">
             <code>
-                <span class="startOfTheLineComments"># data to be plotted</span>
-                years = <span class="purple">np.array(<span class="blue">[2010,2011,2012,2013,2014,2015,2016,2017,2018,2019]</span>)</span><br/>
-                mid_range_cars_sold = <span class="purple">np.array(<span class="blue">[200000,500000,300000,450000,550000,600000,500000,450000,650000,600000]</span>)</span><br/> 
-                two_wheelers_sold = <span class="purple">np.array(<span class="blue">[500000,600000,700000,750000,400000,400000,350000,300000,400000,500000]</span>)</span><br/>
-                elite_range_cars_sold = <span class="purple">np.array(<span class="blue">[510000,610000,720000,730000,430000,450000,650000,400000,300000,200000]</span>)</span><br/>
+                <span class="lineComments"># data to be plotted</span>
+                years = np.<span class="purple">array(<span class="blue">[2010,2011,2012,2013,2014,2015,2016,2017,2018,2019]</span>)</span><br/>
+                mid_range_cars_sold = np.<span class="purple">array(<span class="blue">[200000,500000,300000,450000,550000,600000,500000,450000,650000,600000]</span>)</span><br/> 
+                two_wheelers_sold = np.<span class="purple">array(<span class="blue">[500000,600000,700000,750000,400000,400000,350000,300000,400000,500000]</span>)</span><br/>
+                elite_range_cars_sold = np.<span class="purple">array(<span class="blue">[510000,610000,720000,730000,430000,450000,650000,400000,300000,200000]</span>)</span><br/>
             </code>
         </div>
         <div class="content-box">
@@ -58,28 +58,28 @@
         </div>
         <div class="code-box">
             <code>
-                <span class="startOfTheLineComments"># offset</span>
+                <span class="lineComments"># offset</span>
                 offset = <span class="blue">0.25</span><br/>
                 <br/>
-                <span class="startOfTheLineComments"># plotting the data for mid range cars</span>
-                <span class="purple">plt.bar(<span class="blue">years - offset,mid_range_cars_sold,<span class="orange">width=</span>offset,<span class="orange">color=</span><span class="green">"#bdac3d"</span>,<span class="orange">label=</span><span class="green">"Mid range cars"</span></span>)</span><br/>
-                <span class="startOfTheLineComments"># the bar() method is used to plot bar graphs.The x-axis,y-axis are the least requirements for it to draw a plot</span>
-                <span class="startOfTheLineComments"># the width attribute defines the width of the bar</span>
+                <span class="lineComments"># plotting the data for mid range cars</span>
+                plt.<span class="purple">bar(<span class="blue">years - offset,mid_range_cars_sold,<span class="orange">width=</span>offset,<span class="orange">color=</span><span class="green">"#bdac3d"</span>,<span class="orange">label=</span><span class="green">"Mid range cars"</span></span>)</span><br/>
+                <span class="lineComments"># the bar() method is used to plot bar graphs.The x-axis,y-axis are the least requirements for it to draw a plot</span>
+                <span class="lineComments"># the width attribute defines the width of the bar</span>
                 <br/>
-                <span class="startOfTheLineComments"># plotting the data for elite range of cars</span>
-                <span class="purple">plt.bar(<span class="blue">years,elite_range_cars_sold,<span class="orange">width=</span>offset,<span class="orange">color=</span>"#eedafa",<span class="orange">label=</span>"Elite range cars"</span>)</span><br/>
+                <span class="lineComments"># plotting the data for elite range of cars</span>
+                plt.<span class="purple">bar(<span class="blue">years,elite_range_cars_sold,<span class="orange">width=</span>offset,<span class="orange">color=</span><span class="green">"#eedafa"</span>,<span class="orange">label=</span><span class="green">"Elite range cars"</span></span>)</span><br/>
                 <br/>
-                <span class="startOfTheLineComments"># plotting data for two wheelers</span>
-                <span class="purple">plt.bar(<span class="blue">years + offset,two_wheelers_sold,<span class="orange">width=</span>offset,<span class="orange">color=</span>"#33fdbd",<span class="orange">label=</span>"Two Wheelers Sold"</span>)</span><br/>
+                <span class="lineComments"># plotting data for two wheelers</span>
+                plt.<span class="purple">bar(<span class="blue">years + offset,two_wheelers_sold,<span class="orange">width=</span>offset,<span class="orange">color=</span><span class="green">"#33fdbd"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
                 <br/>
-                <span class="purple">plt.legend()</span><br/>
-                <span class="purple">plt.title(<span class="green">"Vehicle Sales"</span>)</span><br/>
-                <span class="purple">plt.xlabel(<span class="green">"Years"</span>)</span><br/>
-                <span class="purple">plt.ylabel(<span class="gree">"Sales"</span>)</span><br/>
-                <span class="purple">plt.xticks(<span class="green">ticks=years,label=years</span>)</span><br/>
-                <span class="startOfTheLineComments">"""<br/>Not all ticks are shown by default and also sometimes we require to change the ticks to have different values that's where the xticks() method comes in handy<br/>"""</span><br/>
-                <span class="purple">plt.tight_layout()</span><br/>
-                <span class="purple">plt.show()</span>
+                plt.<span class="purple">legend()</span><br/>
+                plt.<span class="purple">title(<span class="green">"Vehicle Sales"</span>)</span><br/>
+                plt.<span class="purple">xlabel(<span class="green">"Years"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Sales"</span>)</span><br/>
+                plt.<span class="purple">xticks(<span class="blue"><span class="orange">ticks=</span>years,<span class="orange">label=</span>years</span>)</span><br/>
+                <span class="lineComments">"""<br/>Not all ticks are shown by default and also sometimes we require to change the ticks to have different values that's where the xticks() method comes in handy<br/>"""</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
             </code>
         </div>
         <div class="content-box">
@@ -96,22 +96,22 @@
         </div>
         <div class="code-box-2">
             <code>
-                <span class="startOfTheLineComments"># plotting the data for mid range cars</span>
-                <span class="purple">plt.barh(<span class="blue">years - offset,mid_range_cars_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#bdac3d"</span>,<span class="orange">label=</span><span class="green">"Mid range cars"</span></span>)</span><br/> 
-                <span class="startOfTheLineComments"># the height attribute defines the height of the bar</span>
+                <span class="lineComments"># plotting the data for mid range cars</span>
+                plt.<span class="purple">barh(<span class="blue">years - offset,mid_range_cars_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#bdac3d"</span>,<span class="orange">label=</span><span class="green">"Mid range cars"</span></span>)</span><br/> 
+                <span class="lineComments"># the height attribute defines the height of the bar</span>
                 <br/>
-                <span class="startOfTheLineComments"># plotting the data for elite range of cars</span>
-                <span class="purple">plt.barh(<span class="blue">years,elite_range_cars_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#eedafa</span>",<span class="orange">label=</span><span class="green">"Elite range cars"</span></span>)</span><br/>
+                <span class="lineComments"># plotting the data for elite range of cars</span>
+                plt.<span class="purple">barh(<span class="blue">years,elite_range_cars_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#eedafa</span>",<span class="orange">label=</span><span class="green">"Elite range cars"</span></span>)</span><br/>
                 <br/>
-                <span class="startOfTheLineComments"># plotting data for two wheelers</span>
-                <span class="purple">plt.barh(<span class="blue">years + offset,two_wheelers_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#33fdbd"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
+                <span class="lineComments"># plotting data for two wheelers</span>
+                plt.<span class="purple">barh(<span class="blue">years + offset,two_wheelers_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#33fdbd"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
                 <br/>
-                <span class="purple">plt.legend()</span><br/>
-                <span class="purple">plt.title(<span class="green">"Vehicle Sales"</span>)</span><br/>
-                <span class="purple">plt.ylabel(<span class="green">"Years"</span>)</span><br/>
-                <span class="purple">plt.xlabel(<span class="green">"Sales"</span>)</span><br/>
-                <span class="purple">plt.tight_layout()</span><br/>
-                <span class="purple">plt.show()</span><span class="comments"># plotting the data for mid range cars</span><br/>
+                plt.<span class="purple">legend()</span><br/>
+                plt.<span class="purple">title(<span class="green">"Vehicle Sales"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Years"</span>)</span><br/>
+                plt.<span class="purple">xlabel(<span class="green">"Sales"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span><span class="comments"># plotting the data for mid range cars</span><br/>
             </code>
         </div>
         <div class="content-box">

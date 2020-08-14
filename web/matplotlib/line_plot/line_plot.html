@@ -21,7 +21,7 @@
             <h2 class="title">Line Plots</h2>
             <div class="downloadSection">
                 <a href="line_plots.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Noteboojk"  src="../../images/jupyter.svg"/></a>
-                <a href="../../../matplotlib_tutorial/line_plotting.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+                <a href="line_plotting.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
             </div>
             <p>To draw a line plot there's not a lot we need to do, it is just about performing a few simple steps. The only thing we need to worry about is the source of data and the clarity of the data we are going to plot.<br/>
             Here is how we can draw the very first of our line plots.</p>
@@ -32,9 +32,9 @@
         </div>
         <div class="code-box">
             <code>
-                <span class="startOfTheLineComments"># imports</span>
-                from matplotlib import pyplot as plt <span class="comments"> # can also be imported as "import matplotlib.pyplot as plt</span><br/>
-                import numpy as np
+                <span class="lineComments"># imports</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt <span class="comments"> # can also be imported as "import matplotlib.pyplot as plt</span><br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np
             </code>
         </div>
         <div class="content-box">
@@ -46,10 +46,10 @@
         </div>
         <div class="code-box-2">
             <code>
-                <span class="startOfTheLineComments"># data to be plotted</span>
-                years = np.array([2010,2011,2012,2013,2014,2015,2016,2017,2018,2019])<br/>
-                cars_sold = np.array([200000,500000,300000,450000,550000,600000,500000,450000,650000,600000])<br/>
-                two_wheelers_sold = np.array([500000,600000,700000,750000,400000,400000,350000,300000,400000,500000])<br/>
+                <span class="lineComments"># data to be plotted</span>
+                years = np.<span class="purple">array(<span class="blue">[2010,2011,2012,2013,2014,2015,2016,2017,2018,2019]</span>)</span><br/>
+                cars_sold = np.<span class="purple">array(<span class="blue">[200000,500000,300000,450000,550000,600000,500000,450000,650000,600000]</span>)</span><br/>
+                two_wheelers_sold = np.<span class="purple">array(<span class="blue">[500000,600000,700000,750000,400000,400000,350000,300000,400000,500000]</span>)</span><br/>
             </code>
         </div>
         <div class="content-box">
@@ -89,19 +89,19 @@
         </div>
         <div class="code-box">
             <code>
-                <span class="startOfTheLineComments"># plotting the data for the cars</span>
-                plt.plot(years,cars_sold,color="Blue",label="Cars Sold")<br/>
+                <span class="lineComments"># plotting the data for the cars</span>
+                plt.<span class="purple">plot(<span class="blue">years,cars_sold,<span class="orange">color=</span><span class="green">"Blue"</span>,<span class="orange">label=</span><span class="green">"Cars Sold"</span></span>)</span><br/>
                 <br/>
-                <span class="startOfTheLineComments"># plotting the data for two wheelers</span>
-                plt.plot(years,two_wheelers_sold,color="Red",linestyle=":",label="Two Wheelers Sold")<br/>
+                <span class="lineComments"># plotting the data for two wheelers</span>
+                plt.<span class="purple">plot(<span class="blue">years,two_wheelers_sold,<span class="orange">color=</span><span class="green">"Red"</span>,<span class="orange">linestyle=</span><span class="green">":"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
                 <br/>
-                plt.legend()<br/>
-                plt.tight_layout()<br/>
-                plt.xticks(ticks=years,labels=years)<br/>
-                plt.xlabel("Years")<br/>
-                plt.ylabel("Sales")<br/>
-                plt.title("Distribution of Sales per Year")<br/>
-                plt.show()<br/>
+                plt.<span class="purple">legend()</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">xticks(<span class="blue"><span class="orange">ticks=</span>years,<span class="orange">labels=</span>years</span>)</span><br/>
+                plt.<span class="purple">xlabel(<span class="green">"Years"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Sales"</span>)</span><br/>
+                plt.<span class="purple">title(<span class="green">"Distribution of Sales per Year"</span>)</span><br/>
+                plt.<span class="purple">show()</span><br/>
             </code>
         </div>
         <div class="content-box">
@@ -155,12 +155,13 @@
         </div>
         <div class="code-box-2">
             <code>
-                plt.plot(years,cars_sold,"ro-.",label="Cars Sold")  <span class="comments"># "ro-." is an fmt string</span><br/>
-                plt.legend()<br/>
-                plt.title("Car sales distribution over 10 years")<br/>
-                plt.xlabel("Years")<br/>
-                plt.ylabel("Cars Sold")<br/>
-                plt.show()<br/>
+                plt.<span class="purple">plot(<span class="blue">years,cars_sold,<span class="green">"ro-."</span>,<span class="orange">label=</span><span class="green">"Cars Sold"</span></span>)</span>  
+                <span class="comments"># "ro-." is an fmt string</span><br/>
+                plt.<span class="purple">legend()</span><br/>
+                plt.<span class="purple">title(<span class="green">"Car sales distribution over 10 years"</span>)</span><br/>
+                plt.<span class="purple">xlabel(<span class="green">"Years"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Cars Sold"</span>)</span><br/>
+                plt.<span class="purple">show()</span><br/>
             </code>
         </div>
         <div class="content-box">

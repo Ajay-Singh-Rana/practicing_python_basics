@@ -2,10 +2,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
         <title>
             Project Work
         </title>
-        <link href="../main_css.css" rel="stylesheet" type="text/css"/>
+        <link href="../webElements.css" rel="stylesheet" type="text/css"/>
+        <link href="../codeStyling.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <nav id="navbar">
@@ -28,23 +31,23 @@
         </div>
         <div class="code-box-2">
             <code>
-                import tkinter as tk<br/>
+                <span class="orange">import</span> tkinter <span class="orange">as</span> tk<br/>
                 <br/>
-                window = tk.Tk()<br/>
-                window.geometry("500x400")<br/>
-                window.title("To Do List")<br/>
+                window = tk.<span class="purple">Tk()</span><br/>
+                window.<span class="purple">geometry(<span class="green">"500x400"</span>)</span><br/>
+                window.<span class="purple">title(<span class="green">"To Do List"</span>)</span><br/>
                 <br/>
-                <span class="comments" style="padding-left:0px;"># defining all the rewuired functions</span><br/>
-                def addTask():<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;pass<br/>
+                <span class="lineComments" style="padding-left:0px;"># defining all the rewuired functions</span><br/>
+                <span class="orange">def <span class="purple">addTask()</span>:</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">pass</span><br/>
                 <br/>
-                tasksList = tk.Listbox(window)<br/>
-                tasksList.pack()<br/>
+                tasksList = tk.<span class="purple">Listbox(<span class="blue">window</span>)</span><br/>
+                tasksList.<span class="purple">pack()</span><br/>
                 <br/>
-                addButton = tk.Button(window,text="Add Task",fg="Black",activebackground="Purple",command=addTask)<br/>
-                addButton.pack()<br/>
+                addButton = tk.<span class="purple">Button(<span class="blue">window,<span class="orange">text=</span><span class="green">"Add Task"</span>,<span class="orange">fg=</span><span class="green">"Black"</span>,<span class="orange">activebackground=</span><span class="green">"Purple"</span>,<span class="orange">command=</span>addTask</span>)</span><br/>
+                addButton.<span class="purple">pack()</span><br/>
                 <br/>
-                window.mainloop()
+                window.<span class="purple">mainloop()</span>
             </code>
         </div>
         <footer>

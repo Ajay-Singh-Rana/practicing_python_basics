@@ -23,11 +23,13 @@
         </div>
         <div class="code-box-2">
             <code lang="Python">
-                import tkinter as tk <span class="comments"># importing the <b>tkinter</b> library with the alias name <b>tk</b></span><br/>
-                <br/>window = tk.Tk() <span class="comments"># calling the <b>Tk()</b> method creates a window</span><br/>
-                window.title("Our First Window") <span class="comments"># setting the title of the window</span><br/>
-                window.geometry("350x300") <span class="comments"># a string of <b>"widthxheight"</b> is passed to tell the size of the window</span><br/>
-                <br/>window.mainloop() <span class="comments"># the <b>mainloop()</b> method listens for events until the widnow is closed</span>
+                <span class="orange">import</span> tkinter <span class="orange">as</span> tk <span class="comments"># importing the <b>tkinter</b> library with the alias name <b>tk</b></span><br/>
+                <br/>
+                window = tk.<span class="purple">Tk()</span> <span class="comments"># calling the <b>Tk()</b> method creates a window</span><br/>
+                window.<span class="purple">title(<span class="green">"Our First Window"</span>)</span> <span class="comments"># setting the title of the window</span><br/>
+                window.<span class="purple">geometry(<span class="green">"350x300"</span>)</span> <span class="comments"># a string of <b>"widthxheight"</b> is passed to tell the size of the window</span><br/>
+                <br/>
+                window.<span class="purple">mainloop()</span> <span class="comments"># the <b>mainloop()</b> method listens for events until the widnow is closed</span>
             </code>
         </div>
         <div class="content-box">
@@ -35,9 +37,12 @@
             <p>Now, to create a window, the <b>tkinter</b> library provides a method <b>Tk()</b>.The line <code class="line-of-code">window = tk.Tk()</code> calls the mehthod <b>Tk()</b> to create a window.</p>
             <p>Fianlly, the line of code <code class="line-of-code">window.mainloop()</code> listens for window events (such as button clicks or a keypress) until the window is not closed.</p>
         </div>
-        <div class="img-container">
-            <img src="window.jpeg" style="padding-left:250px;" alt="window"/>
-        </div>
+        <figure>
+            <figcaption>
+                <img src="window.jpeg" class="img-container" alt="window"/><br/>
+                The First Window
+            </figcaption>
+        </figure>
         <div class="content-box">
             <h3 class="heading">Label Widget</h3>
             <p>The <b>Label</b> widget is a text and image container in tkinter. It is used to add text/images to the main window. Though the text can be displayed in a single font but the text can span multiple lines.</p>
@@ -45,17 +50,22 @@
         </div>
         <div class="code-box">
             <code >
-                import tkinter as tk <span class="comments"># importing the tkinter library</span><br/>
-                window = tk.Tk() <span class="comments"># creating the tkinter window</span><br/>
+                <span class="orange">import</span> tkinter <span class="orange">as</span> tk <span class="comments"># importing the tkinter library</span><br/>
+                window = tk.<span class="purple">Tk()</span> <span class="comments"># creating the tkinter window</span><br/>
                 <br/>
-                textLabel = tk.Label(window,text="Hey There!",fg="red") <span class="comments"># creating a Label</span><br/>
-                textLabel.pack() <span class="comments"># adding the label to the main window with the help of <b>pack()</b> geomemtry manager</span><br/>
+                textLabel = tk.<span class="purple">Label(<span class="blue">window,<span class="orange">text=</span><span class="green">"Hey There!"</span>,<span class="orange">fg=</span><span class="green">"red"</span></span>)</span> <span class="comments"># creating a Label</span><br/>
+                textLabel.<span class="purple">pack()</span> <span class="comments"># adding the label to the main window with the help of <b>pack()</b> geomemtry manager</span><br/>
                 <br/>
-                window.mainloop() <span class="comments"># running the mainloop</span>
+                window.<span class="purple">mainloop()</span> <span class="comments"># running the mainloop</span>
             </code>
         </div>
-        <div class='img-container'>
-            <img src="label_.jpeg" alt="Text label in tkinter" style="padding-left:250px;"/>
+        <div class="content-box">
+            <figure>
+                <figcaption>
+                    <img src="label_.jpeg" class="img-container" alt="Text label in tkinter"/><br/>
+                    Window with a <b>"Hey There"</b> Label
+                </figcaption>
+            </figure>
         </div>
         <div class="content-box">
             <h4>Other parameters for the Label widget :</h4>

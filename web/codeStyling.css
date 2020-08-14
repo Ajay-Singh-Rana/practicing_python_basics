@@ -35,7 +35,7 @@
 }
 
 /* style for lines of comments */
-.startOfTheLineComments{
+.lineComments{
     display : block;
     color : rgb(33, 104, 33);
 } 
@@ -84,6 +84,7 @@
     border-left : 3px Solid rgb(139, 81, 247);
     margin : 10px;
     margin-left : 50px;
+    overflow : auto;
 }
 
 /* style 2 for the result area */
@@ -98,7 +99,8 @@
     font-style : italic;
     font-weight : bold;
     max-width : 600px;
-    color : rgba(0,0,0,0.7)
+    color : rgba(0,0,0,0.7);
+    overflow : auto;
 }
 
 /* style for single lines of code */
