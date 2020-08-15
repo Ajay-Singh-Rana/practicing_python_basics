@@ -1,0 +1,194 @@
+<!--h3avren-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initail scale=1.0"/>
+        <link type="text/css" rel="stylesheet" href="../../codeStyling.css"/>
+        <link type="text/css" rel="stylesheet" href="../../webElements.css"/>
+    </head>
+    <body>
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/intro.html">Python</a>
+            <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <div class="content-box">
+            <h1 class="title">Pie Charts</h1>
+            <div class="downloadSection">
+                <a href="pie_charts.ipynb" download=""><img src="../../images/jupyter.svg" title="Download Jupyter Notebook" alt="Jupyter"/></a>
+                <a href="pie_charts.py" download=""><img src="../../images/python-brands.svg" title="Download Python Code" alt="Python"/></a>
+            </div>
+            <p>A Pie Chart is a type of graph that displays data in a circular graph.The pieces of the graph are proportional to the fraction of the whole in each category. <br/>
+                Or we can also say, each slice of the pie is relative to the size of that category in the group as a whole.<br/>
+                The entire pie represents 100% of a whole, while the slices represent portions of the whole.
+            </p>
+            <h3>Note:</h3>
+            <ol type="1">
+                <li>To draw a pie chart with matplotlib in python we use the pie() method.</li>
+                <li>Also, a pie chart is suitable for comparing only a few categories but if there are more than a certain number of categories then a pie chart wouldn't be the best fit.</li>
+                <li>Slices are also called wedges.</li>
+                <li>Be careful, all arrays should be the same size as the array for slices.</li>
+            </ol>
+            <br/>
+            <h4>Importing the libraries</h4>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># importing the libraries</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np
+            </code>
+        </div>
+        <div class="content-box">
+            <h4>Writing down the data</h4>
+        </div>
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># writing down the data</span>
+                pollutants = np.<span class="purple">array(<span class="blue">[<span class="green">"CO"</span>,<span class="green">"CO2"</span>,<span class="green">"PM 2.5"</span>,<span class="green">"Methane"</span>,<span class="green">"CFC"</span>]</span>)</span><br/>
+                slices = np.<span class="purple">array(<span class="blue">[20,30,23,20,7]</span>)</span>
+            </code>
+        </div>
+        <div class="content-box">
+            <h4>Plotting the data</h4>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting</span>
+                plt.<span class="purple">pie(<span class="blue">slices,<span class="orange">labels=</span>pollutants</span>)</span>   <span class="comments"># the labels array provides labels to the corresponding values of the slices</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Major Pollutants"</span>)</span>  <span class="comments"># provides a title to the plot</span><br/>
+                plt.<span class="purple">tight_layout()</span>  <span class="comments"># adjusts the padding</span><br/> 
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>This plots the following pie:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="pie_chart_1.png" alt="pie_chart" style="height:400px"/><br/>
+                    Pie Chart
+                </figcaption>
+            </figure>
+            <h4>Adding a shadow and an edge color to the pie chart</h4>
+        </div>
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># adding a shadow and an edge color to the chart</span>
+                plt.<span class="purple">pie(<span class="blue">slices,<span class="orange">labels=</span>pollutants,<span class="orange">shadow=</span>True,<span class="orange">wedgeprops=</span>{<span class="green">"edgecolor"</span>:<span class="green">"Black"</span>}</span>)</span><br/>
+                <span class="lineComments"># settiing the shadow attribute to True provides a shadow to the plot</span>
+                <span class="lineComments"># To provide the edges with a color we need to alter the wedgeprops attribute which takes in a dictionary</span>
+                <span class="lineComments"># {"edgecolor":"Black"} is the dictionary that we pass as a wedgeprops argument just to change the edge color of the slice or wedge</span>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Major Pollutants"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span><br/>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>A plot with improved styles pops up:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="pie_chart_2.png" alt="Pie Chart" style="height:400px"/><br/>
+                    Pie Chart With Edge Color And A Shadow
+                </figcaption>
+            </figure>
+            <h4>Exploding out a particular section of the pie</h4>
+        </div>
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># to explode out a particular section of the pie</span>
+                explode = np.<span class="purple">array(<span class="blue">[0,0,0,0,0.25]</span>)</span>  <span class="comments"># an array with values ranging between 0 and 1</span><br/>
+                <span class="lineComments"># this decides the proportion by which the corresponding slices will explode out from the pie</span>
+                <br/>
+                plt.<span class="purple">pie(<span class="blue">slices,<span class="orange">labels=</span>pollutants,<span class="orange">explode=</span>explode,<span class="orange">shadow=</span>True,<span class="orange">wedgeprops=</span>{<span class="green">"edgecolor"</span>:<span class="green">"Black"</span>}</span>)</span><br/>
+                plt.<span class="purple">title(<span class="green">"Major Pollutants"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>We get a plot with one of the wedges exploded out.</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="pie_chart_3.png" alt="Pie Chart" style="height:400px"/><br/>
+                    Pie Chart With A Slice Exploded Out
+                </figcaption>
+            </figure>
+            <h4>Adding colors of choice</h4>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># adding colors of choice</span>
+                colors = np.<span class="purple">array(<span class="blue">[<span class="green">"#2abdff"</span>,<span class="green">"#3eec11"</span>,<span class="green">"#0a34fe"</span>,<span class="green">"#ee33dd"</span>,<span class="green">"#eeccee"</span>]</span>)</span><br/>
+                <span class="lineComments"># array of colors for the slices</span>
+                plt.<span class="purple">pie(<span class="blue">slices,<span class="orange">labels=</span>pollutants,<span class="orange">colors=</span>colors,<span class="orange">explode=</span>explode,<span class="orange">shadow=</span>True,<span class="orange">wedgeprops=</span>{<span class="green">"edgecolor"</span>:<span class="green">"Black"}</span></span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Major Pollutants"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span><br/>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>A pie with desired colors</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="pie_chart_4.png" alt="Pie Chart" style="height:400px;"/><br/>
+                    Pie With Manual Colors
+                </figcaption>
+            </figure>
+            <h4>Adding the percentage in the pie</h4>
+        </div>
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># adding the percentage in the pie</span>
+                plt.<span class="purple">pie(<span class="blue">slices,<span class="orange">labels=</span>pollutants,<span class="orange">colors=</span>colors,
+                <span class="orange">explode=</span>explode,<span class="orange">wedgeprops=</span>{<span class="green">"edgecolor"</span>:<span class="green">"Black"</span>
+                </span>},<span class="orange">shadow=</span>True,<span class="orange">autopct=</span><span class="green">"%1.1f%%"</span>)</span><br/>
+                <span class="lineComments"># autopct is the argument passed to the pie() method in order to label the slices with percentage</span>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Major Pollutants"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>Pie slices marked with percentage</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="pie_chart_5.png" alt="Pie Chart" style="height:400px;"/><br/>
+                    Pie Chart Labeled With Percentage
+                </figcaption>
+            </figure>
+            <h4>Changing the start angle of the pie</h4>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># changing the start angle of the pie</span>
+                plt.<span class="purple">pie(<span class="blue">slices,<span class="orange">labels=</span>pollutants,<span class="orange">colors=</span>colors,
+                <span class="orange">explode=</span>explode,<span class="orange">wedgeprops=</span>{<span class="green">"edgecolor"</span>:<span class="green">"Black"</span>},
+                <span class="orange">shadow=</span>True,<span class="orange">autopct=</span><span class="green">"%1.1f%%"</span>,<span class="orange">startangle=</span>180</span>)</span><br/>
+                <span class="lineComments"># setting the startangle argument makes the pie rotate to the left from the x-axis by the degree of the passed value</span> 
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Major Pollutants"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>A pie with changed start angle:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="pie_chart_6.png" alt="Pie Chart" style="height:400px;"/><br/>
+                    Our Final Pie Plot
+                </figcaption>
+            </figure>
+            <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
+        </div>
+        <footer>
+            <span class="footer"><a class="footer" href="https://www.github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
+        </footer>
+    </body>
+</html>
