@@ -1,0 +1,194 @@
+<!--h3avren-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link href="../../codeStyling.css" type="text/css" rel="stylesheet"/>
+        <link href="../../webElements.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        
+        <!--start of navbar-->
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/intro.html">Python</a>
+            <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <!--end of navbar-->
+
+        <div class="content-box">
+            <h1 class="title">Stack Plots</h1>
+            <div class="downloadSection">
+                <a href="stack_plot.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Noteboojk"  src="../../images/jupyter.svg"/></a>
+                <a href="stack_plot.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+            </div>
+            <p>A Stack Plot is a plot that shows the whole data set with easy visualization of how each part makes up the whole.<br/> 
+            Each constituent of the stack plot is stacked on top of each other. It shows the part makeup of the unit,as well as the whole unit.</p>
+            <h4>Importing the libraries</h4 >
+        </div>
+
+        <!--first code box-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># imports</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np</span>
+            </code>
+        </div>
+        <!--end of first code box-->
+
+        <div class="content-box">
+            <h4>Getting the data ready</h4>
+        </div>
+
+        <!--second code box-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># getting the data ready</span>
+                <br/>
+                <span class="lineComments"># cricket matches</span> 
+                matches = np.<span class="purple">array(<span class="blue">[1,2,3,4,5,6]</span>)</span><br/>
+                <br/>
+                <span class="lineComments"># scores by top 3 players of a both sides</span>
+                player_1 = np.<span class="purple">array(<span class="blue">[100,45,80,85,95,56]</span>)</span><br/>
+                player_2 = np.<span class="purple">array(<span class="blue">[10,45,56,36,89,114]</span>)</span><br/>
+                player_3 = np.<span class="purple">array(<span class="blue">[100,20,10,5,18,111]</span>)</span><br/>
+            </code>
+        </div>
+        <!--end of second code box-->
+
+        <div class="content-box">
+            <h4>Plotting the data to a stackplot</h4>
+        </div>
+
+        <!--third code box-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting the data to a stackplot</span>
+                plt.<span class="purple">stackplot(<span class="blue">matches,player_1,player_2,player_3</span>)</span>   <span class="comments"># the stackplot() method is used to plot a stackplot</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Scores By Top 3 Players"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of third code box-->
+
+        <!---first image-->
+        <div class="content-box">
+            <p>This is our first copy of the stack plot that we will be plotting:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="stack_plot_1.png" alt="Stack Plot"/>
+                    Stack Plot
+                </figcaption>
+            </figure>
+            <h4>Providing labels for the Plot</h4>
+        </div>
+        <!--end of first image-->
+ 
+        <!--fourth code box-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># providing labels</span>
+                labels = np.<span class="purple">array(<span class="blue">[<span class="green">"Player_1"</span>,<span class="green">"Player_2"</span>,<span class="green">"Player_3"</span>]</span>)</span><br/>
+                <br/>                
+                plt.<span class="purple">stackplot(<span class="blue">matches,player_1,player_2,player_3,<span class="orange">labels=</span>labels</span>)</span> <span class="comments"># the labels argument is responsible to give labels to the plot</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Scores By Top 3 Players"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">legend()</span> <span class="comments"># the legend() method adds the labels to the legend and displays it</span><br/>
+                plt.<span class="purple">show()</span><br/>
+            </code>
+        </div>
+        <!--end of fourth code box-->
+
+        <!--second image-->
+        <div class="content-box">
+            <p>This gives us a plot with labels:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="stack_plot_2.png" alt="Stack Plot"/>
+                    A Stack Plot With Proper Labels
+                </figcaption>
+            </figure>
+            <p>What we get here is a plot with labels wrongly placed.So,we'll be fixing that.</p>
+            <h4>Changing the location of the legend and adding colors of choice</h4>
+        </div>
+        <!--end of second image-->
+
+
+        <!--fifth code box-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># changing the location of the legend and adding colors of choice</span>
+                <br/>
+                <span class="lineComments"># colors</span>
+                colors = np.<span class="purple">array(<span class="blue">[<span class="green">"#33fff0"</span>,<span class="green">"#ff771d"</span>,<span class="green">"#302df1"</span>]</span>)</span>
+                <span class="comments"># the colors array</span><br/>
+                <br/>
+                plt.<span class="purple">stackplot(<span class="blue">matches,player_1,player_2,player_3,<span class="orange">labels=</span>labels,<span class="orange">colors=</span>colors</span>)</span><br/>   
+                <span class="lineComments"># passing the colors argument a set of colors sets the colors for the plot</span>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Scores By Top 3 Players"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">legend(<span class="orange">loc=</span><span class="green">"upper left"</span>)</span>    <span class="comments"># passing the loc either a tuple or a string sets the location of the legend</span><br/>
+                <span class="lineComments"># "upper left" places the legend on the upper left corner of the plot</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of fifth code box-->
+
+        <!--third image-->
+        <div class="content-box">
+            <p>Here's our final plot,the one with perfectly placed legend and colors of our choice:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="stack_plot_3.png" alt="Stack Plot"/>
+                    Final Plot
+                </figcaption>
+            </figure>
+            <h4>Extras ;););)</h4>
+            <p>We can plot a stack plot by passing a single multi-dimension array instead of passing arrays separately. It's like each dimension of the array will be treated as an individual array argument.</p>
+        </div>
+        <!--end of third image-->
+        
+
+        <!--sixth code box-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># redefining the data as a multi-dimensional array</span>
+                players= np.<span class="purple">array(<span class="orange">[<span class="blue">[100,45,80,85,95,56]</span>,<span class="blue">[10,45,56,36,89,114]</span>,<span class="blue">[100,20,10,5,18,111]</span>]</span>)</span><br/>
+                <br/>
+                <span class="lineComments"># plotting</span>
+                plt.<span class="purple">stackplot(<span class="blue">matches,players,<span class="orange">labels=</span>labels,<span class="orange">colors=</span>colors</span>)</span><br/>   
+                <span class="lineComments"># passing the multi-dimensional array</span>
+                <br/>                
+                plt.<span class="purple">title(<span class="green">"Scores By Top 3 Players"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">legend(<span class="orange">loc=</span><span class="green">"upper left"</span>)</span><br/> 
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of sixth code box-->
+
+        <!--fourth image-->
+        <div class="content-box">
+            <p>This gives us the same plot as our final plot:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="stack_plot_3.png" alt="Stack Plot"/><br/>
+                    What shall I caption this,when i already captioned the previous one as "Final Plot" ?
+                </figcaption>
+            </figure>
+            <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
+        </div>
+        <!--end of fourth image-->
+
+        <footer>
+            <span><a class="footer" href="https://github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
+        </footer>
+    </body>
+</html>
