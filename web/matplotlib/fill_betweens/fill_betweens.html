@@ -1,0 +1,124 @@
+<!--h3avren-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,/>initial-scale=1.0"/> 
+
+        <!--styleshheets-->
+        <link rel="stylesheet" type="text/css" href="../../codeStyling.css"/>
+        <link rel="stylesheet" type="text/css" href="../../webElements.css"/>
+        <!--end of stylesheets-->
+        
+    </head>
+    <body>
+        
+        <!--navbar-->
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/intro.html">Python</a>
+            <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <!--end of navbar-->
+        
+        <!--title content box-->
+        <div class="content-box">
+            <h1 class="title">Fill Betweens</h1>
+            <div class="downloadSection">
+                <a href="fill_betweens.ipynb" download=""><img src="../../images/jupyter.svg" title="Download Jupyter Notebook" alt="Jupyter"/></a>
+                <a href="fill_betweens.py" download=""><img src="../../images/python-brands.svg" title="Download Python Code" alt="Python"/></a>
+            </div>
+        </div>
+        <!--end of title content box-->
+
+        <!--code box 1-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># imports</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np<br/>
+                <br/>
+                <span class="lineComments"># using the xkcd() style for our plot</span>
+                plt.<span class="purple">xkcd()</span> <span class="comments"># using the xkcd style for our plots...it's going to be fun :):):)</span>
+            </code>
+        </div>
+        <!--end of code box 1-->
+
+        <!--heading one-->
+        <div class="content-box">
+            <h3 class="heading">Writing down the data to be plotted</h3>
+        </div>
+
+        <!--code box 2-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># data to be plotted</span>
+                ages = np.<span class="purple">array(<span class="blue">[11,12,13,14,15,16,17,18,19,20]</span>)</span><span class="comments"># age data</span><br/>
+                set_1 = np.<span class="purple">array(<span class="blue">[120,140,150,160,170,170,175,180,180,180]</span>)</span> <span class="comments"># height data from survey 1</span><br/>
+                set_2 = np.<span class="purple">array(<span class="blue">[130,140,150,160,165,172,178,178,180,182]</span>)</span> <span class="comments"># height data from survey 2</span>
+            </code>
+        </div>
+        <!--end of code box 2-->
+
+        <!--content box 1-->
+        <div class="content-box">
+            <h3 class="heading">Plotting the data</h3>
+        </div>
+        <!--end of content box 2-->
+
+        <!--code box 3-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting the data</span>
+                plt.<span class="purple">plot(<span class="blue">ages,set_1,<span class="orange">linestyle=</span><span class="green">"--"</span>,<span class="orange">color=</span><span class="green">"Blue"</span>,<span class="orange">label=</span><span class="green">"Height_set_1"</span></span>)</span>
+                <span class="comments"># plotting the data from survey 1</span><br/>
+                <br/>
+                plt.<span class="purple">plot(<span class="blue">ages,set_2,<span class="orage">linestyle=</span><span class="green">"-."</span>,<span class="orange">color=</span><span class="green">"Red"</span>,<span class="orange">label=</span><span class="green">"Height_set_2"</span></span>)</span>
+                <span class="comments"># plotting the data from survey 2</span><br/>
+                <br/>
+                <span class="lineComments">
+                """
+                Fill Betweens are used to fill areas between different plots to highlight the important data therefore making the plot more informative.
+                """
+                </span>
+                <br/>
+                plt.<span class="purple">fill_between(<span class="blue">ages,set_1,<span class="orange">y2=</span>set_2,<span class="orange">where=</span><span class="purple">(<span class="blue">set_1 <span class="orange"> ></span> set_2</span>)</span>,<span class="orange">alpha=</span>0.25,<span class="orange">color=</span><span class="green">"Green"</span>,<span class="orange">interpolate=</span>True</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">fill_between(<span class="blue">ages,set_1,<span class="orange">y2=</span>set_2,<span class="orange">alpha=</span>0.25,<span class="orange">color=</span><span class="green">"Red"</span>,<span class="orange">where=</span><span class="purple">(<span class="blue">set_1 <span class="orange"><=</span> set_2</span>)</span>,<span class="orange">interpolate=</span>True</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">legend()</span><span class="comments"># to provide a legend to the plot</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">"Age"</span>)</span><span class="comments"># giving a label to the x-axis</span><br/>
+                <br/>
+                plt.<span class="purple">ylabel(<span class="green">"Height"</span>)</span><span class="comments"># giving a label to the y-axis</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Height distribution among ages"</span>)</span> <span class="comments"># providing the plot with a title</span><br/>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 3-->
+
+        <!--image box-->
+        <div class="content-box">
+            <p>The above code pops up the following fill between:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="fill_between.png" alt="Fill Between"/>
+                    Fill Between
+                </figcaption>
+            </figure>
+            <h3>That's it for today...See you in the next tutorial...until then a <em>H3avren</em> style Ta-Da...</h3>
+        </div>
+        <!--end of image box-->
+
+        <!--footer section-->
+        <footer>
+            <span><a class="footer" href="https://www.github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
+        </footer>
+        <!--end of footer section-->
+
+    </body>
+</html>
