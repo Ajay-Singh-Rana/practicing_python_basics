@@ -122,6 +122,43 @@
                     Horizontal Bar Plot
                 </figcaption>
             </figure>
+            <h3 class="heading">Extras :):):)</h3>
+            <p>We can see that in our plots the legend takes a predefined position and therefore at times messes up with the graph.<br/>
+            There's a way to fix that.We can pass an loc argument to the legend() method. This argument takes the following values:<br/>
+            <ol type="1">
+                <li>Either an String which defines a position i.e. "upper left","upper right","lower left" and "lower right"</li>
+                <br/>
+                <li>Or a Tuple which specifies the distance from x and y axis. <br/>If the distance is between 0 and 1 the legend is placed within the plot boundary and if it is greater than 1 it escapes the plot boundary. Example : (0.5,0.6)</li></p>
+            <p>Here, we will fix the legend for our horizontal plot:</p>
+        </div>
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting the data for mid range cars</span>
+                plt.<span class="purple">barh(<span class="blue">years - offset,mid_range_cars_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#bdac3d"</span>,<span class="orange">label=</span><span class="green">"Mid range cars"</span></span>)</span><br/> 
+                <span class="lineComments"># the height attribute defines the height of the bar</span>
+                <br/>
+                <span class="lineComments"># plotting the data for elite range of cars</span>
+                plt.<span class="purple">barh(<span class="blue">years,elite_range_cars_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#eedafa</span>",<span class="orange">label=</span><span class="green">"Elite range cars"</span></span>)</span><br/>
+                <br/>
+                <span class="lineComments"># plotting data for two wheelers</span>
+                plt.<span class="purple">barh(<span class="blue">years + offset,two_wheelers_sold,<span class="orange">height=</span>offset,<span class="orange">color=</span><span class="green">"#33fdbd"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
+                <br/>
+                plt.<span class="purple">legend(<span class="orange">loc=<span class="purple">(<span class="blue">0.7,0.4</span>)</span></span>)</span><sapn class="comments"> # passing the exact position we want the legend to be at </sapn><br/>
+                plt.<span class="purple">title(<span class="green">"Vehicle Sales"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Years"</span>)</span><br/>
+                plt.<span class="purple">xlabel(<span class="green">"Sales"</span>)</span><br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span><span class="comments"># plotting the data for mid range cars</span><br/>
+            </code>
+        </div>
+        <div class="content-box">
+            <p>Our fixed plot looks like this:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="bar_plot_horizontal_2.png" alt="Bar Plot"/><br/>
+                    Bar Plot With Fixed Legend
+                </figcaption>
+            </figure>
             <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
         </div>
         <footer>
