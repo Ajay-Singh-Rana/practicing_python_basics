@@ -30,6 +30,131 @@
         </div>
         <!--end of title box-->
 
+        <!--code box 1-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># imports</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np
+            </code>
+        </div>
+        <!--end of code box 1-->
+
+        <!--content box 1-->
+        <div class="content-box">
+            <h3 class="heading">Organizing the data</h3>
+        </div>
+        <!--end of content box 1-->
+
+        <!--code box 2-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># organizing the data</span>
+                <br/>
+                <span class="lineComments"># different ages among book-readers in a library</span>
+                ages = np.<span class="purple">array(<span class="blue">[14,15,17,19,21,23,24,27,29,33,35,36,37,39,41,43,45,49,50]</span>)</span><br/>
+                <br/>
+                <span class="lineComments"># bins</span>
+                <span class="lineComments"># bins are used to group the data</span>
+                bins = np.<span class="purple">array(<span class="blue">[10,20,30,40,50,60]</span>)</span><br/>
+            </code>
+        </div>
+        <!--end of code box 2-->
+
+        <!--content box 2-->
+        <div class="content-box">
+            <h3 class="heading">Plotting the data</h3>
+        </div>
+        <!--end of content box 2-->
+
+        <!--code box 3-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting</span> 
+                plt.<span class="purple">hist(<span class="blue">ages,bins</span>)</span><br/>
+                <br/>
+                <span class="lineComments">
+                """<br/>
+                The hist() method is used to plot a histogram, the first parameter is the set of values to be plotted and the second yet not mandatory attribute is bins which is used to group the data to be plotted
+                <br/>"""
+                </span>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Bookreaders"</span>)</span><br/>
+                <br/>                
+                plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 3-->
+
+        <!--image container 1-->
+        <div class="content-box">
+            <p>Here's what pops up on the window:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="histogram_1.png" alt="Histogram"/>
+                    First Draft
+                </figcaption>
+            </figure>
+        </div>
+        <h3 class="heading">Adding an edge color to the plot</h3>
+        <!--end of image container 1-->
+
+        <!--code box 4-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># adding an edge color to the plot</span> 
+                <span class="lineComments"># adding an edge color is as simple as passing the edgecolor with a color value</span> 
+                plt.<span class="purple">hist(<span class="blue">ages,bins,<span class="orange">edgecolor=</span><span class="green">"black"</span></span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Bookreaders"</span>)</span><br/>
+                <br/>                
+                plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 4-->
+
+        <!--image container 2-->
+        <div class="content-box">
+            <p>Here's the plot after adding edge color to it:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="histogram_2.png" alt="Histogram"/>
+                    Histogram With Black Edge Color
+                </figcaption>
+            </figure>
+            <h3 class="heading">Changing the color of the histogram bar</h3>
+        </div>
+        <!--end of image container 2-->
+
+        <!--code box 5-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># changing colors for the bars</span> 
+                <br/>
+                <span class="lineComments"># color</span> 
+                color =  <span class="blue">[<span class="green">"#ddaa11"</span>]</span><br/>
+                <br/>
+                plt.<span class="purple">hist(<span class="blue">ages,bins,<span class="orange">color=</span>color,<span class="orange">edgecolor=</span><span class="green">"black"</span></span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Bookreaders"</span>)</span><br/>
+                <br/>                
+                plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 5-->
+
         <!--footer-->
         <footer>
             <span><a class="footer" href="https://github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
