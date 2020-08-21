@@ -26,6 +26,8 @@
                 <a href="bar_plot.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Noteboojk"  src="../../images/jupyter.svg"/></a>
                 <a href="bar_plot.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
             </div>
+            <p>A histogram is an approximate representation of the distribution of numerical data.To construct a histogram,the first step is to <b>bin</b> 
+            the range of values (dividing the entire range of values into a series of intervals) the data.Follow the following steps to plot histograms with the help of matplotlib and Python.</p>
             <h3 class="heading">Importing the libraries</h3>
         </div>
         <!--end of title box-->
@@ -79,7 +81,7 @@
                 <br/>"""
                 </span>
                 <br/>
-                plt.<span class="purple">title(<span class="green">"Age Distribution Among Bookreaders"</span>)</span><br/>
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Book-readers"</span>)</span><br/>
                 <br/>                
                 plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
                 plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
@@ -95,7 +97,7 @@
             <p>Here's what pops up on the window:</p>
             <figure>
                 <figcaption>
-                    <img class="img-container" src="histogram_1.png" alt="Histogram"/>
+                    <img class="img-container" src="histogram_1.png" alt="Histogram"/><br/>
                     First Draft
                 </figcaption>
             </figure>
@@ -110,7 +112,7 @@
                 <span class="lineComments"># adding an edge color is as simple as passing the edgecolor with a color value</span> 
                 plt.<span class="purple">hist(<span class="blue">ages,bins,<span class="orange">edgecolor=</span><span class="green">"black"</span></span>)</span><br/>
                 <br/>
-                plt.<span class="purple">title(<span class="green">"Age Distribution Among Bookreaders"</span>)</span><br/>
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Book-readers"</span>)</span><br/>
                 <br/>                
                 plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
                 plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
@@ -126,7 +128,7 @@
             <p>Here's the plot after adding edge color to it:</p>
             <figure>
                 <figcaption>
-                    <img class="img-container" src="histogram_2.png" alt="Histogram"/>
+                    <img class="img-container" src="histogram_2.png" alt="Histogram"/><br/>
                     Histogram With Black Edge Color
                 </figcaption>
             </figure>
@@ -135,16 +137,17 @@
         <!--end of image container 2-->
 
         <!--code box 5-->
-        <div class="code-box-2">
+        <div class="code-box">
             <code>
                 <span class="lineComments"># changing colors for the bars</span> 
                 <br/>
                 <span class="lineComments"># color</span> 
                 color =  <span class="blue">[<span class="green">"#ddaa11"</span>]</span><br/>
                 <br/>
+                <span class="lineComments"># we can change the default color of our bars by passing the color value to the color argument</span>
                 plt.<span class="purple">hist(<span class="blue">ages,bins,<span class="orange">color=</span>color,<span class="orange">edgecolor=</span><span class="green">"black"</span></span>)</span><br/>
                 <br/>
-                plt.<span class="purple">title(<span class="green">"Age Distribution Among Bookreaders"</span>)</span><br/>
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Book-readers"</span>)</span><br/>
                 <br/>                
                 plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
                 plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
@@ -154,6 +157,62 @@
             </code>
         </div>
         <!--end of code box 5-->
+
+        <!--image container 3-->
+        <div class="content-box">
+            <p>The plot with changed bar color looks like this:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="histogram_3.png" alt="Histogram"/><br/>
+                    Histogram With Manually Passed Color For Bars
+                </figcaption>
+            </figure>
+            <h3 class="heading">Plotting a histogram on a logarithmic scale</h3>
+        </div>
+        <!--end of image container 3-->
+
+        <!--code box 6-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># plotting a chart on a logarithmic scale</span>
+                <span class="lineComments">
+                <br/>
+                """<br/>
+                When a large dataset isn given then a few groups within the data might become obscure in comparison with another group,that's the reason a plot with a logarithmic scale is plotted.
+                <br/>"""
+                </span>
+                <br/>
+                <span class="lineComments"># data</span> 
+                population = np.<span class="purple">array(<span class="blue">[10,20,30,33,34,35,36,37,38.5,39,50,39.5]</span>)</span><br/>
+                <br/>
+                age_groups = np.<span class="purple">array(<span class="blue">[30,32,34,36,38,40,42]</span>)</span><br/>
+                <br/>
+                <span class="lineComments"># plotting</span> 
+                plt.<span class="purple">hist(<span class="blue">population,age_groups,<span class="orange">color=</span>color,<span class="orange">edgecolor=</span><span class="green">"Black"</span>,<span class="orange">log=True</span></span>)</span><br/>
+                <br/>              
+                plt.<span class="purple">title(<span class="green">"Age Distribution Among Book-readers"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">"Ages"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Frequency"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 6-->
+        
+        <!--image container 4-->
+        <div class="content-box">
+            <p>That's how a histogram plotted on a logarithmic scale looks like</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="histogram_4.png" alt="Histogram"/><br/>
+                    Our Final Plot
+                </figcaption>
+            </figure>
+            <h3>That's it for today...See you in the next tutorial...Until then a H3avren style Ta-Da...</h3>
+        </div>
+        <!--image container 4-->
 
         <!--footer-->
         <footer>
