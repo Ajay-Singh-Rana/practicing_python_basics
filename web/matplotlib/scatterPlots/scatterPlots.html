@@ -26,8 +26,240 @@
                 <a href="scatterPlots.ipynb" download=" "><img src="../../images/jupyter.svg" alt="Jupyter Notebook" title="Download Jupyter Notebook"/></a>
                 <a href="pie_charts.py" download=""><img src="../../images/python-brands.svg" title="Download Python Code" alt="Python"/></a>
             </div>
+            <p>
+                Scatter Plot has points that shows relationship between two sets of data.<br/>
+                In order to draw a scatter plot with matplotlib we use the <b>scatter()</b> method.
+            </p>
+            <h3 class="heading">Importing the libraries</h3>
         </div>
         <!--end of title box-->
+
+        <!--code box 1-->
+        <div class="code-box">
+            <code>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np
+            </code>
+        </div>
+        <!--end of code box 1-->
+
+        <!--content box 1-->
+        <div class="content-box">
+            <h3 class="heading">Using a built-in style and writing down the data</h3>
+        </div>
+        <!--end of content box 1-->
+
+        <!--code box 2-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># using a built-in matplotlib style for the plot</span>
+                plt.<span class="purple">style.<span class="orange">use</span>(<span class="green">"seaborn"</span>)</span>
+                <span class="lineComments"><br/>
+                """<br/>
+                To use a style we need to call the use method of the syle object for the pyplot (plt) and pass it the name of the style that you wish to use. We have the following styles to choose from :
+                <br/>"""
+                </span><br/>
+                <span class="lineComments"># Writing down the data</span>
+                <br/>
+                <span class="lineComments"># price and ratings for few products</span>
+                price = np.<span class="purple">array(<span class="blue">[1000,2343,3334,4535,555,6344,734,85,966,1033]</span>)</span><br/>
+                ratings = np.<span class="purple">array(<span class="blue">[6,7,7,7,3,8,3,2,4,6]</span>)</span>
+            </code>
+        </div>
+        <!--end of code box 2-->
+
+        <!--content box 2-->
+        <div class="content-box">
+            <h3 class="heading">Plotting the data</h3>
+        </div>
+        <!--end of content box 2-->
+
+        <!--code box 3-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting</span>
+                plt.<span class="purple">scatter(<span class="blue">price,ratings</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">'Product Ratings vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">'Price'</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">'Ratings'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 3-->
+
+        <!--image container 1-->
+        <div class="content-box">
+            <p>The very first scatter plot that we get is:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="scatter_plot_1.png" alt="Scatter Plot"/><br/>
+                    Scatter Plot
+                </figcaption>
+            </figure>
+            <h3 class="heading">Setting the size for the markers on the plot</h3>
+        </div>
+        <!--end of image container 1-->
+
+        <!--code box 4-->
+        <div class='code-box-2'>
+            <code>
+                <span class="lineComments"># setting the size for the markers on the plot</span>
+                <br/>
+                <span class="lineComments">
+                """<br/>
+                To set the size for the markers we need to pass a size value to the "s" argument and the size for these markers should be in double or triple digits otherwise the resulting markers are going to be too tiny cause the s argument expects size value to be of the form point**2.
+                <br/>"""
+                </span>
+                <br/>
+                plt.<span class="purple">scatter(<span class="blue">price,ratings,<span class="orange">s=</span>60</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">'Product Ratings vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">'Price'</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">'Ratings'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 4-->
+
+        <!--image container 2-->
+        <div class="content-box">
+            <p>Our plot with increased size for the markers:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="scatter_plot_2.png" alt="Scatter Plot"/><br/>
+                    Scatter Plot With Increased Marker Size                   
+                </figcaption>
+            </figure>
+            <h3 class="heading">Changing the marker shape,color and setting its linewidth</h3>
+        </div>
+        <!--end of image container 2-->
+
+        <!--code box 5-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># changing the marker shape,color and setting its linewidth</span>
+                <br/>
+                <span class="lineComments">
+                """<br/>
+                The marker can be changed by passing the desired marker style to the 'marker' attribute and the color can be changed using the 'c' argument as for the linewidth we need to pass the desired vlaue for the width of the line to the 'linewidths' argument.Passing a color value to the edgecolor gives our marker a color on the edges.
+                <br/>"""
+                </span>
+                <br/>
+                plt.<span class="purple">scatter(<span class="blue">price,ratings,<span class="orange">s=</span>150,<span class="orange">c=</span><span class="green">"green"</span>,<span class="orange">marker=</span><span class="green">"X"</span>,<span class="orange">edgecolor=</span><span class="green">"black"</span>,<span class="orange">linewidths=</span>1,<span class="orange">alpha=</span>0.85</span>)</span><br/>    
+                <span class="lineComments"># alpha just decides the intensity of the color,the color is more intense towards 1 than towards 0</span>
+                <br/>
+                plt.<span class="purple">title(<span class="green">'Product Ratings vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">'Price'</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">'Ratings'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 5-->
+
+        <!--image container 3-->
+        <div class="content-box">
+            <p>Our plot has now not only got new markers but is also more attractive:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="scatter_plot_3.png" alt="Scatter Plot"/><br/>
+                    Scatter Plot With An 'X' Marker
+                </figcaption>
+            </figure>
+            <h3 class="heading">Adding a color bar to the scatter plot</h3>
+        </div>
+        <!--end of image container 3-->
+
+        <!--code box 6-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># adding a color bar to the scatter plot</span>
+                <br/>
+                <span class="lineComments">
+                """<br/>
+                we use a colorbar to get more visually good looking and informative plots, these are a colorscale where the varying color of the markers are indicated as a comparision scale so obviously we need to provide different color values to each point
+                <br/>"""
+                </span>
+                <br/>
+                <span class="lineComments"># defining colors array for every point</span>
+                colors = np.<span class="purple">array(<span class="blue">[4,5,8,9,3,7,0,3,5,10]</span>)</span><span class="comments"># this array is then passed on to the c attribute</span><br/>
+                <br/>
+                plt.<span class="purple">scatter(<span class="blue">price,ratings,<span class="orange">s=</span>150,<span class="orange">c=</span>colors,<span class="orange">cmap=</span><span class="green">"Greens"</span>,<span class="orange">marker=</span><span class="green">"X"</span>,<span class="orange">edgecolor=</span><span class="green">"black"</span>,<span class="orange">linewidths=</span>1</span>)</span><br/>
+                <br/>
+                colorbar = plt.<span class="purple">colorbar()</span><br/>
+                colorbar.<span class="purple">set_label(<span class="green">'Ratings Vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">'Product Ratings vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">'Price'</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">'Ratings'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 6-->
+        
+        <!--image container 4-->
+        <div class="content-box">
+            <p>This plot pops up:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="scatter_plot_4.png" alt="Scatter Plot"/><br/>
+                    Scatter Plot With A Color-bar
+                </figcaption>
+            </figure>
+            <h3 class="heading">Plotting a scatter plot on a logarithmic scale</h3>
+        </div>
+        <!--end of image container 4-->
+
+        <!--code box 7-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting a scatter plot on a logarithmic scale</span>
+                <br/>
+                plt.<span class="purple">scatter(<span class="blue">price,ratings,<span class="orange">s=</span>150,<span class="orange">c=</span>colors,<span class="orange">cmap=</span><span class="green">"Greens"</span>,<span class="orange">marker=</span><span class="green">"X"</span>,<span class="orange">edgecolor=</span><span class="green">"black"</span>,<span class="orange">linewidths=</span>1</span>)</span><br/>
+                <br/>
+                <span class="lineComments"># to plot a scatter plot on a logarithmic scale we have to set the scale for the abscissa's  to 'log'</span><br/>
+                plt.<span class="purple">xscale(<span class="green">'log'</span>)</span><span class="comments"># setting the xscale to 'log'</span><br/>
+                plt.<span class="purple">yscale(<sapn class="green">'log'</sapn>)</span><span class="comments"># setting the ysclae to 'log'</span><br/>
+                <br/>
+                colorbar = plt.<span class="purple">colorbar()</span><br/>
+                colorbar.<span class="purple">set_label(<span class="green">'Ratings Vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">title(<span class="green">'Product Ratings vs Price'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">'Price'</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">'Ratings'</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 7-->
+
+        <!--image container 5-->
+        <div class="content-box">
+            <p>This is our final plot and it has been plotted on a logarithmic scale:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="scatter_plot_5.png" alt="Scatter Plot"/><br/>
+                    Scatter Plot Drawn On a Logarithmic Scale
+                </figcaption>
+            </figure>
+            <h3>That's it for today...See you in the next tutorial...Until then a H3avren style Ta-Da...</h3>
+        </div>
+        <!--end of image container 5-->
+
+        <!--footer-->
+        <footer>
+            <span><a class="footer" href="https://github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="#">@kamlesh</a></span>
+        </footer>
+        <!--end of footer-->
 
     </body>
 </html>
