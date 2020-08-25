@@ -22,8 +22,8 @@
         <div class="content-box">
             <h1 class="title">Plotting Date Based Data</h1>
             <div class="downloadSection">
-                <a href="scatterPlots.ipynb" download=" "><img src="../../images/jupyter.svg" alt="Jupyter Notebook" title="Download Jupyter Notebook"/></a>
-                <a href="pie_charts.py" download=""><img src="../../images/python-brands.svg" title="Download Python Code" alt="Python"/></a>
+                <a href="date_plots.ipynb" download=" "><img src="../../images/jupyter.svg" alt="Jupyter Notebook" title="Download Jupyter Notebook"/></a>
+                <a href="date_plots.py" download=""><img src="../../images/python-brands.svg" title="Download Python Code" alt="Python"/></a>
             </div>
             <p>To plot the date based data we have a special <b>plot_date()</b> method in matplotlib.</p>
             <h3 class="heading">Imports</h3>
@@ -33,11 +33,122 @@
         <!--code box 1-->
         <div class="code-box">
             <code>
+                <span class="lineComments"># imports</span>
                 <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
                 <span class="orange">import</span> numpy <span class="orange">np</span>
              </code>
         </div>
         <!--end of code box 1-->
+
+        <!--content box 1-->
+        <div class="content-box">
+            <h3 class="heading">Writing down date based data</h3>
+        </div>
+        <!--end of content box 1-->
+
+        <!--code box 2-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># collecting date based data</span>
+                date = np.<span class="purple">array(<span class="blue">[<span class="orange">datetime(<span class="blue">2020,3,2</span>)</span>,<span class="orange">datetime(<span class="blue">2020,3,3</span>)</span>,<span class="orange">datetime(<span class="blue">2020,3,4</span>)</span>,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">datetime(<span class="blue">2020,3,5</span>)</span>,<span class="orange">datetime(<span class="blue">2020,3,7</span>)</span>,<span class="orange">datetime(<span class="blue">2020,3,6</span>)</span>,<span class="orange">datetime(<span class="blue">2020,3,8</span>)</span>]</span>)</span><br/>
+                <br/>
+                price = np.<span class="purple">array(<span class="blue">[11.2,11.3,11.4,11.5,11.6,11.4,11]</span>)</span>
+            </code>
+        </div>
+        <!--end of code box 2-->
+
+        <!--content box 2-->
+        <div class="content-box">
+            <h3 class="heading">Plotting the data</h3>
+        </div>
+        <!--end of content box 2-->
+
+        <!--code box 3-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting</span>
+                plt.<span class="purple">plot_date(<span class="blue">date,price,<span class="orange">linestyle=</span><span class="green">"-"</span></span>)</span> <span class="comments"># if we do not use a linestyle we get scattered points by default</span><br/>
+                <br/>
+                plt.<span class="purple">gcf().<span class="orange">autofmt_xdate()</span></span><span class="comments"># that's how we tilt the xtciks of the date for the sake of clarity</span>
+                <br/>
+                <span class="lineComments"># gcf() is the method to get the current figure,we can manipulate the plot figure using this function</span>
+                <br/>                
+                plt.<span class="purple">title(<span class="green">"Price Variations"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">"Dates"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green">"Price"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 3-->
+
+        <!--image container 1-->
+        <div class="content-box">
+            <p>This is our first date plot but with a mistake in plotting style:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="date_plot_1.png" alt="Date Plot"/><br/>
+                    Our First Date Plot
+                </figcaption>
+            </figure>
+            <h3 class="heading">Sorting and formatting dates</h3>
+        </div>
+        <!--end of image container 1-->
+
+        <!--code box 4-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># sorting and formatting dates</span>
+                <br/>
+                <span class="lineComments">"""<br/>
+                though the previous plot seems to be perfect but it has a glitch in it as the date 6-8-2020 comes later in the array so the graph is wrongly plotted at that point 
+                and what if we want to change our date format to date-month_nam-year ? we can achieve that by passing a format string to the DateFormatter class of matplotlib dates
+                <br/>"""
+                </span>
+                <br/>
+                <span class="lineComments"># importing matplotlib dates</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> dates <span class="orange">as</span> mpl_dates<br/>
+                <br/>
+                <span class="lineComments"># sorting our dates array using the numpy sort function</span>
+                date = np.<span class="purple">sort(<span class="blue">date</span>)</span><br/>
+                <br/>
+                <span class="lineComments"># plotting the graph with the sorted data</span> 
+                plt.<span class="purple">plot_date(<span class="blue">date,price,<span class="orange">linestyle=</span><span class="green">"-"</span></span>    )</span><br/>
+                <br/>
+                plt.<span class="purple">gcf().<span class="orange">autofmt_xdate()</span></span>
+                <br/>
+                date_format = mpl_dates.<span class="purple">DateFormatter(<span class="green">"%d-%b-%Y"</span>)</span><span class="comments"># that's a format string there are more such format strings that can be checked in the documentation</span><br/>
+                <br/>
+                plt.<span class="purple">gca().<span class="orange">xaxis.<span class="blue">set_major_formatter(<span class="purpel">date_format</span>)</span></span></span><span class="comments"># function to change the dates on the x-axis</span>
+                <br/>
+                plt.<span class="purple">title(<span class="green">"Price Variations"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">xlabel(<span class="green">"Dates"</span>)</span><br/>
+                plt.<span class="purple">ylabel(<span class="green"">Price"</span>)</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span>
+                <br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 4-->
+
+        <!--image container 2-->
+        <div class="content-box">
+            <p>Our final plot with the mistake from the previous plot eradicated and dates formatted in a much readable format:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="date_plot_2.png" alt="Date Plot"/><br/>
+                    Our Final Plot
+                </figcaption>
+            </figure>
+            <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
+        </div>
+        <!--end of image container-->
 
         <!--footer-->
         <footer>
