@@ -1,0 +1,219 @@
+<!--h3avren-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Sub Plots</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+        <!--stylesheets-->
+        <link href="../../codeStyling.css" rel="stylesheet" type="text/css"/>
+        <link href="../../webElements.css" rel="stylesheet" type="text/css"/>
+        <!--end of stylesheets-->
+
+    </head>
+    <body>
+        
+        <!--navigation section-->
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/intro.html">Python</a>
+            <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <!--end of navigation section-->
+
+        <!--title box-->
+        <div class="content-box">
+            <h1 class="title">Sub Plots</h1>
+            <div class="downloadSection">
+                <a href="sub_plots.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Notebook"  src="../../images/jupyter.svg"/></a>
+                <a href="sub_plots.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+            </div>
+            <p>Sub plots provide an object oriented method to create a plot or multiple plots. With the help of sub-plots we can plot multiple figures or multiple plots on a single figure. The <b>subplots()</b> method is used for this purpose.</p>
+            <h3 class="heading">Imports</h3>
+        </div>
+        <!--end of title box-->
+
+        <!--code box 1-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># imports</span>
+                <span class="orange">from</span> matplotlib <span class="orange">import</span> pyplot <span class="orange">as</span> plt<br/>
+                <span class="orange">import</span> numpy <span class="orange">as</span> np
+            </code>
+        </div>
+        <!--end of code box 1-->
+
+        <!--content box 1-->
+        <div class="content-box">
+            <h3 class="heading">Writing down the data</h3>
+        </div>
+        <!--end of content box 1-->
+
+        <!--code box 2-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># data to be plotted</span>
+                years = np.<span class="purple">array(<span class="blue">[2010,2011,2012,2013,2014,2015,2016,2017,2018,2019]</span>)</span><br>
+                cars_sold = np.<span class="purple">array(<span class="blue">[200000,500000,300000,450000,550000,600000,500000,450000,650000,600000]</span>)</span><br/> 
+                two_wheelers_sold = np.<span class="purple">array(<span class="blue">[500000,600000,700000,750000,400000,400000,350000,300000,400000,500000]</span>)</span>
+            </code>
+        </div>
+        <!--end of code box 2-->
+
+        <!--content box 2-->
+        <div class="content-box">
+            <h3 class="heading">Initializing the subplot object and plotting out the data</h3>
+        </div>
+        <!--end of content box 3-->
+
+        <!--code box 3-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># instantiating the subplot class</span>
+                <br/>
+                fig,ax = plt.<span class="purple">subplots()</span><span class="comments"># this object initializes both the fig and ax variables.</span><br/>
+                <span class="lineComments"># By default a subplot has 1 axes but it can changes by passing values to the argument nrows and ncols</span>
+                <br/>
+                <span class="lineComments"># plotting</span>
+                <br/>
+                <span class="lineComments"># the ax object is used instead of the plt object</span>
+                <br/>
+                <span class="lineComments"># plotting the data for the cars</span>
+                ax.<span class="purple">plot(<span class="blue">years,cars_sold,<span class="orange">color=</span><span class="green">"Blue"</span>,<span class="orange">label=</span><span class="green">"Cars Sold"</span></span>)</span><br/>
+                <br/>
+                <span class="lineComments"># plotting the data for two wheelers</span>
+                ax.<span class="purple">plot(<span class="blue">years,two_wheelers_sold,<span class="orange">color=</span><span class="green">"Red"</span>,<span class="orange">linestyle=</span><span class="green">":"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
+                <br/>
+                ax.<span class="purple">legend()</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                <br/>
+                <span class='lineComments'># 'set_' prefix is used for function names to set labels and titles when using subplots</span>
+                ax.<span class="purple">set_xlabel(<span class="green">"Years"</span>)</span><br/>
+                ax.<span class="purple">set_ylabel(<span class="green">"Sales"</span>)</span><br/>
+                ax.<span class="purple">set_title(<span class="green">"Distribution of Sales per Year"</span>)</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 3-->
+
+        <!--image container 1-->
+        <div class="content-box">
+            <p>Here is our first plot using subplot:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="fig_1.png" alt="Sub Plot"/><br/>
+                    First Subplot
+                </figcaption>
+            </figure>
+        </div>
+        <!--end of image container 1-->
+
+        <!--code box 4-->
+        <div class="code-box-2">
+            <code>
+                <span class="lineComments"># creating more than one plots in the same figure</span>
+                <br/>
+                fig, <span class="orange">(<span class="blue">ax1,ax2</span>)</span> = plt.<span class="purple">subplots(<span class="blue"><span class="orange">nrows=</span>2,<span class="orange">ncols=</span>1,<span class="orange">sharex=</span>True</span>)</span><br/>
+                <span class="lineComments"># nrows defines the number of axes in the row and ncols decides the number of axes in the column</span>
+                <span class="lineComments"># setting sharex to true defines that both the plots will share the x axis ticks,same is true for sharey.</span>
+                <br/>
+                <span class="lineComments"># plotting the data for the cars</span>
+                <br/>
+                <span class="lineComments"># we will use the ax1 axes to draw our first plot and we won't be using any xlabels cause we have opted to share the x axise between the two plots</span>
+                ax1.<span class="purple">plot(<span class="blue">years,cars_sold,<span class="orange">color=</span><span class="green">"Blue"</span>,<span class="orange">label=</span><span class="green">"Cars Sold"</span></span>)</span><br/>
+                ax1.<span class="purple">set_ylabel(<span class="green">"Sales"</span>)</span><br/>
+                ax1.<span class="purple">set_title(<span class="green">"Distribution of Sales per Year"</span>)</span><br/>
+                ax1.<span class="purple">legend()</span><br/>
+                <br/>
+                <span class="lineComments"># plotting the data for two wheelers</span>
+                <br/>
+                <span class="lineComments"># we will be using the ax2 axes to draw our second plot and we won't be giving it a title as we have the same title for both the plots</span>
+                ax2.<span class="purple">plot(<span class="blue">years,two_wheelers_sold,<span class="orange">color=</span><span class="green">"Red"</span>,<span class="orange">linestyle=</span><span class="green">":"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
+                ax2.<span class="purple">set_xlabel(<span class="green">"Years"</span>)</span><br/>
+                ax2.<span class="purple">set_ylabel(<span class="green">"Sales"</span>)</span><br/>
+                ax2.<span class="purple">legend()</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span>
+            </code>
+        </div>
+        <!--end of code box 4-->
+        
+        <!--image container 2-->
+        <div class="content-box">
+            <p>Here's what two plots drawn on the same figure look like:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="fig_2.png" alt="Sub Plot"/><br/>
+                    Figure With Multiple Plots
+                </figcaption>
+            </figure>
+            <h3 class="heading">Plotting two different figures</h3>
+        </div>
+        <!--end of image container 2-->
+
+        <!--code box 5-->
+        <div class="code-box">
+            <code>
+                <span class="lineComments"># plotting on two different figures</span>
+                <br/>
+                <span class="lineComments"># instantiating two different plot figures</span>
+                fig1,ax1 = plt.<span class="purple">subplots()</span><br/>
+                fig2,ax2 = plt.<span class="purple">subplots()</span><br/>
+                <br/>
+                <span class="lineComments"># plotting the data for the cars</span>
+                ax1.<span class="purple">plot<span class="blue">(years,cars_sold,<span class="orange">color=</span><span class="green">"Blue"</span>,<span class="orange">label=</span><span class="green">"Cars Sold"</span></span>)</span><br/>
+                ax1.<span class="purple">set_xlabel(<span class="green">"Years"</span>)</span><br/>
+                ax1.<span class="purple">set_ylabel(<span class="green">"Sales"</span>)</span><br/>
+                ax1.<span class="purple">set_title(<span class="green">"Distribution of Sales per Year"</span>)</span><br/>
+                ax1.<span class="purple">legend()</span><br/>
+                <br/>
+                <span class="lineComments"># plotting the data for two wheelers</span>
+                ax2.<span class="purple">plot(<span class="blue">years,two_wheelers_sold,<span class="orange">color=</span><span class="green">"Red"</span>,<span class="orange">linestyle=</span><span class="green">":"</span>,<span class="orange">label=</span><span class="green">"Two Wheelers Sold"</span></span>)</span><br/>
+                ax2.<span class="purple">set_xlabel(<span class="green">"Years"</span>)</span><br/>
+                ax2.<span class="purple">set_ylabel(<span class="green">"Sales"</span>)</span><br/>
+                ax2.<span class="purple">set_title(<span class="green">"Distribution of Sales per Year"</span>)</span><br/>
+                ax2.<span class="purple">legend()</span><br/>
+                <br/>
+                plt.<span class="purple">tight_layout()</span><br/>
+                plt.<span class="purple">show()</span><br/>
+                <br/>
+                <span class="lineComments"># fig1.savefig(name) saves fu]igure 1</span>
+                <span class="lineComments"># fig2.show(name) saves figure 2</span>
+            </code>
+        </div>
+        <!--end of code box 5-->
+
+        <!--image container 3-->
+        <div class="content-box">
+            <p>Both the figures generated by the subplot method just pop up onto our screen:</p>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="fig_3.png" alt="Sub Plot"/><br/>
+                    The First Figure
+                </figcaption>
+            </figure>
+            <br/>
+            <br/>
+            <br/>
+            <figure>
+                <figcaption>
+                    <img class="img-container" src="fig_4.png" alt="Sub Plot"/><br/>
+                    The Second Figure Generated By The Subplot
+                </figcaption>
+            </figure>
+            <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
+        </div>
+        <!--end of image container 4-->
+
+        <!--footer section-->
+        <footer>
+            <span class="footer"><a class="footer" href="https://www.github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
+        </footer>
+        <!--end of footer section-->
+
+    </body>
+</html>
