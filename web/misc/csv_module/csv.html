@@ -31,8 +31,313 @@
         <!--title block-->
         <div class="content-box">
             <h1 class="title">The csv Module</h1>
+            <div class="downloadSection">
+                <a href="csv.ipynb" download=""><img src="../../images/jupyter.svg" title="Download Jupyter Notebook" alt="Jupyter"/></a>
+                <a href="csv.py" download=""><img src="../../images/python-brands.svg" title="Download Python Code" alt="Python"/></a>
+            </div>
+            <h3 class="heading"></h3>
+            <p>The <b>csv</b>(<b>comma separated values</b>) module is used to handle csv files i.e. it makes it easier to read and write the csv files.<br/>
+            It provides various functions to read and write the csv files,out of which we will be using the <b>DictWriter()</b> and <b>writer()</b> functions to write the csv files and to read the csv files we will be using the <b>DictReader()</b> and the <b>reader()</b> functions.<br/>
+            <br/>
+            So, to start we will be importing the `csv module.</p>
         </div>
         <!--end of title block-->
+
+        <!--code block 2-->
+        <div class="small-snippet">
+            <code>
+                <span class="lineComments"># importing the csv module</span>
+                <span class="orange">import</span> csv<br/>
+                <span class="lineComments">
+                    # we can print the functions provided by the module for an overview<br/>
+                    # print(dir(csv))
+                </span>
+            </code>
+        </div>
+        <!--end of code block 2-->
+
+        <!--content block 1-->
+        <div class="content-box">
+            <h3 class="heading">Writing to the csv using writer() function</h3>
+            <p>We will be using the writer function first. So, to know how it works let us print the <b>help()</b> for that function.</p>
+        </div>
+        <!--end of content block 1-->
+
+        <!--code block 3-->
+        <div class="small-snippet">
+            <code>
+                <span class="purple">print(<span class="orange">help(<span class="blue">csv.writer</span>)</span>)</span>
+            </code>
+        </div>
+        
+        <!--results block-->
+        <div class="results-box">
+            <pre>
+Help on built-in function writer in module _csv:
+
+writer(...)
+    csv_writer = csv.writer(fileobj [, dialect='excel']
+                                [optional keyword args])
+        for row in sequence:
+            csv_writer.writerow(row)
+    
+        [or]
+    
+        csv_writer = csv.writer(fileobj [, dialect='excel']
+                                [optional keyword args])
+        csv_writer.writerows(rows)
+    
+    The "fileobj" argument can be any object that supports the file API.
+
+            </pre>
+        </div>
+        <!--end of results block-->
+        <!--end of code block 3-->
+
+        <!--content block 2-->
+        <div class="content-box">
+            <p>
+            Now that we know we need to pass a file object to the <b>writer()</b> function and after that we can use <b>writerow()</b> method
+            to write a row to the csv file,therefore, we will be opening a file first and then we will write the first 100 numbers and their squares to that file.
+            </p>
+        </div>
+        <!--end of content block 2-->
+
+        <!--code block 4-->
+        <div class="code-box">
+            <code>
+                <span class="orange">with</span> <span class="purple">open(<span class="green">'squares.csv'<span class="blue">,</span>'w'</span>)</span> <span class="orange">as</span> <span class="blue">file</span><span class="orange">:</span>
+                <span class="comments"># opening a csv file with the context manager</span><br/>
+                writer = csv.<span class="purple">writer(<span class="blue">file</span>)</span>   <span class="comments"># creating a writer object</span><br/>
+                writer.<span class="purple">writerow(<span class="blue">[<span class="green">'Number'</span>,<span class="green">'Squares'</span>]</span>)</span>   <span class="comments"># writing the headers as the first row of the csv file</span><br/>
+                <span class="orange">for</span> i <span class="orange">in</span> <span class="purple">range(<span class="blue">1,101,1</span>)</span><span class="orange">:</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;writer.<span class="purple">writerow(<span class="blue">[i,i<span class="orange">**</span>2]</span>)</span>   <span class="comments"># writing the numbers and squares to the file</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;"># writer.writerows([list of data to be written]) # is used to write multiple rows of data to the csv</span>
+            </code>
+        </div>
+        <!--end of code block 4-->
+
+        <!--content block 3-->
+        <div class="content-box">
+            <h3 class="heading">Reading the csv file using the reader() function</h3>
+            <p>Now, as we have written a csv file,let's confirm its success by reading the same file with the <b>reader()</b> function. So, again before jumping to use the reader function let's print its documentation with  the <b>help()</b> function.</p>
+        </div>
+        <!--end of content block 3-->
+
+        <!--code block 5-->
+        <div class="small-snippet">
+            <code><span class="purple">print(<span class="orange">help(<span class="blue">csv.reader</span>)</span>)</span></code>
+        </div>
+        <!--results box-->
+        <div class="results-box-2">
+            <pre>
+Help on built-in function reader in module _csv:
+
+reader(...)
+    csv_reader = reader(iterable [, dialect='excel']
+                            [optional keyword args])
+        for row in csv_reader:
+            process(row)
+    
+    The "iterable" argument can be any object that returns a line
+    of input for each iteration, such as a file object or a list.  The
+    optional "dialect" parameter is discussed below.  The function
+    also accepts optional keyword arguments which override settings
+    provided by the dialect.
+    
+    The returned object is an iterator.  Each iteration returns a row
+    of the CSV file (which can span multiple input lines).
+            </pre>
+        </div>
+        <!--end of results box-->
+        <!--end of code block 5-->
+
+        <!--content block 4-->
+        <div class="content-box">
+            <p>Now that we know the <b>reader</b> returns an iterator to loop over. Let's read the csv file we just created.</p>
+        </div>
+        <!--end of content block 4-->
+
+        <!--code block 6-->
+        <div class="code-box-2">
+            <code>
+                <span class="orange">with</span> <span class="purple">open(<span class="green">'squares.csv'<span class="blue">,</span>'r'<span class="blue">,</span><span class="orange">newline=</span>''</span>)</span> <span class="orange">as</span> <span class="blue">file</span><span class="orange">:</span>
+                <span class="comments"># opening a file in the read mode</span><br/>
+                    reader = csv.<span class="purple">reader(<span class="blue">file</span>)</span><br/>
+                    header = <span class="purple">next(<span class="blue">reader</span>)</span>   <span class="comments"># reading the headers of the file</span><br/>
+                    data = <span class="purple">[<span class="blue">line <span class="orange">for</span> line <span class="orange">in</span> reader</span>]</span>    <span class="comments"># extracting the remaining data by iterating over it</span><br/>
+                    <br/>
+                <span class="purple">print(<span class="blue">header</span>)</span>  <span class="comments"># printing the headers</span><br/>
+                <span class="purple">print(<span class="blue">data<span class="purple">[<span class="blue">0</span>]</span></span>)</span> <span class="comments"># printing the first element of the data</span>
+            </code>
+        </div>
+
+        <!--results box-->
+        <div class="results-box">
+            <code>  
+                ['Number', 'Squares']<br/>
+                ['1', '1']
+            </code>
+        </div>
+        <!--end of results box-->
+        <!--end of code block 6-->
+
+        <!--content block 5-->
+        <div class="content-box">
+            <p>Everything that we get as output after reading the csv file is an string type. We can convert this data to the required format using the inbuilt functions like <b>int()</b>, <b>str()</b> and <b>float()</b>.</p>
+            <h3 class="heading">Writing a csv file using the DictWriter() function</h3>
+            <p>Next, we'll be using the <b>DictWriter()</b> function so let's print <b>help()</b> on the same.</p>
+        </div>
+        <!--end of content block 5-->
+
+        <!--code block 7-->
+        <div class="small-snippet">
+            <code>
+                <span class="purple">print(<span class="orange">help(<span class="blue">csv.DictWriter</span>)</span>)</span>
+            </code>
+        </div>
+
+        <!--results box-->
+        <div class="results-box-2">
+            <pre>
+Help on class DictWriter in module csv:
+
+class DictWriter(builtins.object)
+    |  Methods defined here:
+    |  
+    |  __init__(self, f, fieldnames, restval='', extrasaction='raise', dialect='excel', *args, **kwds)
+    |      Initialize self.  See help(type(self)) for accurate signature.
+    |  
+    |  writeheader(self)
+    |  
+    |  writerow(self, rowdict)
+    |  
+    |  writerows(self, rowdicts)
+    |  
+    |  ----------------------------------------------------------------------
+    |  Data descriptors defined here:
+    |  
+    |  __dict__
+    |      dictionary for instance variables (if defined)
+    |  
+    |  __weakref__
+    |      list of weak references to the object (if defined)
+
+None                
+            </pre>
+        </div>
+        <!--end of results box-->
+        <!--end of code block 7-->
+
+        <!--content block 6-->
+        <div class="content-box">
+            <p>Writing cubes to a file using <b>DictWriter().</b></p>
+        </div>
+        <!--end of content block 6-->
+
+        <!--code block 8-->
+        <div class="code-box">
+            <code>
+                <span class="orange">with</span> <span class="purple">open(<span class="green">'cubes.csv'<span class="blue">,</span>'w'</span>)</span> <span class="orange">as</span> <span class="blue">file</span><span class="orange">:</span><br/>     
+                &nbsp;&nbsp;&nbsp;&nbsp;fieldnames = <span class="purple">[<span class="green">'Numbers'<span class="blue">,</span>'Cubes'</span>]</span><br/>    
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;"># fieldnames is an argument that contains the header for the csv file and is passed to the DictWriter method when creating a writer object</span><br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;writer = csv.<span class="purple">DictWriter(<span class="blue">file,<span class="orange">fieldnames=</span>fieldnames</span>)</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;"># creating a writer object with the DictWriter function takes a file object and fieldnames argument</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;writer.<span class="purple">writeheader()</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;"># the writeheader() function is used to write the fieldnames as the Header to the csv file</span><br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">for</span> i <span class="orange">in</span> <span class="purple">range(<span class="blue">1,101,1</span>)</span><span class="orange">:</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.<span class="purple">writerow(<span class="blue">{<span class="green">'Numbers'</span><span class="orange">:</span>i,<span class="green">'Cubes'</span><span class="orange">:</span>i<span class="orange">**</span>3}</span>)</span>    <span class="comments"># the writerow function for a DictWriter object takes a dictionary as an argument</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;"># writer.writerows([dicts]) # this function is used to write multiple rows at once</span>
+            </code>
+        </div>
+        <!--end of code block 8-->
+
+        <!--content block 7-->
+        <div class="content-box">
+            <h3 class="heading">Reading the file using DictReader()</h3>
+            <p>Now we will be using the <b>DictReader()</b> to read the file.Let's print <b>help()</b> on the same.</p>
+        </div>
+        <!--end of content block 7-->
+
+        <!--code block 9-->
+        <div class="small-snippet">
+            <code>
+                <span class="purple">print(<span class="orange">help(<span class="blue">csv.DictWriter</span>)</span>)</span>
+            </code>
+        </div>
+
+        <!--results box-->
+        <div class="results-box">
+            <pre>
+Help on class DictReader in module csv:
+
+class DictReader(builtins.object)
+ |  Methods defined here:
+ |  
+ |  __init__(self, f, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __iter__(self)
+ |  
+ |  __next__(self)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  fieldnames
+
+None
+            </pre>
+        </div>
+        <!--end of results box-->
+
+        <!--final code block-->
+        <div class="code-box-2">
+            <code>
+                <span class="orange">with</span> <span class="purple">open(<span class="green">'cubes.csv'<span class="blue">,</span>'r'</span>)</span> <span class="orange">as</span> <span class="blue">file</span><span class="orange">:</span><br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;reader = csv.<span class="purple">DictReader(<span class="blue">file</span>)</span>   <span class="comments"># creating the reader object with the DictReader() function</span><br/> 
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">print(<span class="blue">reader.fieldnames</span>)</span>    <span class="comments"># to access the headers of the csv file we use the fieldnames object</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;data = <span class="purple">[<span class="blue">row <span class="orange">for</span> row <span class="orange">in</span> reader</span>]</span> <span class="comments"># to access the data within the reader iterator we use the keys or headers of the csv file</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">print(<span class="blue">data<span class="purple">[<span class="orange">0</span>][<span class="green">"Numbers"</span>]</span>,<span class="green">","</span>,data<span class="purple">[<span class="orange">0</span>][<span class="green">"Cubes"</span>]</span></span>)</span>  <span class="comments"># this prints the first line of the data</span><br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;"># this prints the complete list of data</span><br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments" style="padding-left:0px;">"""<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;for row in data:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(row["Numbers"],',',row["Cubes"])<br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;Alternatively :<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;for row in reader:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(row["Numbers"],",",row["Cubes"])<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;"""</span>
+            </code>
+        </div>
+        <!--end of final code block-->
+
+        <!--final results box-->
+        <div class="results-box">
+            <code>
+                ['Numbers', 'Cubes']<br/>
+                1 , 1
+            </code>
+        </div>
+        <!--end of final results box-->
+        <!--end of code block 9-->
+
+        <!--content block 8-->
+        <div class="content-box">
+            <p>That's the final method that we will be learning from the csv module.</p>
+            <h3>That's it...See you in the next tutorial...until then a H3avren style Ta-Da...</h3>
+        </div>
+        <!--end of content block 8-->
 
         <!--footer-->
         <footer>
