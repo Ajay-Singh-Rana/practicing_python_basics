@@ -132,3 +132,8 @@
 .green{
     color : rgb(33, 104, 33);
 }
+
+/* style rules to indent a region */
+.tab{
+    padding-left: 30px;
+}
