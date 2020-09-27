@@ -1,0 +1,128 @@
+<!--h3avren-->
+<!--doctype html-->
+<html lang="en-US">
+    <head>
+        <title>Lambda Functions</title>
+        
+        <!--meta tags start here-->
+        <meta charset="UTF-8"/>
+        <meta name="view-port" content="width=device-width,initial-scale=1.0"/>
+        <!--end of meta tags-->
+
+        <!--stylesheets go here-->
+        <link href="../../codeStyling.css" rel="stylesheet" type="text/css"/>
+        <link href="../../webElements.css" rel="stylesheet" type="text/css"/>
+        <!--stylesheets end here-->
+    </head>
+    <body>
+        
+        <!--navbar-->
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/intro.html">Pandas</a>
+            <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+            <a class="navbar" href="../../matplotlib/intro.html">Matplotlib</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <!--end of navbar-->
+
+        <!--title block-->
+        <div class="content-box">
+            <h1 class="title">Lambda Functions</h1>
+            <div class="downloadSection">
+                <a href="lambda.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Notebook"  src="../../images/jupyter.svg"/></a>
+                <a href="lambda.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+            </div>
+            <p>Lambda Functions are also called anonymous functions as these functions do not have a name.</p>
+            <h3 class="heading">Syntax</h3>
+            <p>A lambda function starts with the keyword lambda.The syntax for these functions is : </p>
+            <div class="small-snippet">
+                <code>
+                    <span class="orange">lambda</span> arguments_list <span class="orange">:</span> return_statement
+                </code>
+            </div>
+            <h3 class="heading">Creating a lambda function</h3>
+        </div>
+        <!--end of title block-->
+
+        <!--code block 1-->
+        <div>
+            <div class="code-box">
+                <code>
+                    <span class="orange">lambda</span> x <span class="orange">:</span> (3 * x) + 1<span class="comments"># here this anonymous function takes an argument namely x and returns the value 1 more than x multiplied by 3 (i.e. 3x + 1)</span><br/>
+                    <span class="lineComments"># But we cannot use the above function as it doesn't have a name,to use it we need to give it a name by assigning it to a variable</span>
+                    <br/>
+                    no_more_anonymous <span class="green">=</span> <span class="orange">lambda</span> x <span class="orange">:</span> (3 * x) + 1<br/>
+                    <span class="lineComments"># now to we can use the variable name as any normal python function</span><br/> 
+                    <span class="purple">print(<span class="blue">no_more_anonymous(<span class="green">3</span>)</span>)</span>
+                </code>
+            </div>
+            <div class="results-box">
+                <code>
+                    10
+                </code>
+            </div>
+        </div>
+        <!--end of code block 1-->
+
+        <!--content block 1-->
+        <div>
+            <div class="content-box">
+                <h3 class="heading">Lambda function without arguments</h3>
+                <p>Like any other python function a lambda function too can have a null arguments list i.e. a function without arguments.</p>
+            </div>
+            <div class="small-snippet">
+                <code>
+                    <span class="lineComments"># example of lambda function without arguments</span>
+                    f <span class="green">=</span> <span class="orange">lambda :</span> <span class="purple">print(<span class="green">"Hello World!"</span>)</span><br/>
+                    <span class="purple">f()</span> <span class="comments"># calling the function f</span>
+                </code>
+            </div>
+            <div class="results-box-2">
+                <code>
+                    Hello World!
+                </code>
+            </div>
+        </div>
+        <!--end of content block 1-->
+
+        <!--content block 2-->
+        <div>
+            <div class="content-box">
+                <h3 class="heading">Using a lambda function for impersonating a mathematical equation</h3>
+            </div>
+            <div class="code-box-2">
+                <code>
+                    <span class="lineComments"># we can use lambda functions for generating quadratic equations</span>
+                    <span class="lineComments"># let's write a function that simulates the mathematical function of ax**2 + bx + c</span>
+                    <span class="orange">def</span> <span class="purple">quadratic_equation(<span class="blue">a,b,c</span>)</span> <span class="orange">:</span>  <span class="comments"># this function takes the values of the coefficients of x as arguments</span><br/>
+                        <span class="tab purple">return</span> <span class="orange">lambda</span> x <span class="orange">:</span> <span class="purple">(<span class="blue">(a <span class="orange">*</span> <span class="purple">(<span class="blue">x <span class="orange">**</span> 2</span>)</span>)</span> <span class="orange">+</span> <span class="purple">(<span class="blue">b <span class="orange">*</span> x</span>)</span> <span class="orange">+</span> c)</span><br/>
+                    <br/>                   
+                    f <span class="orange">=</span> <span class="purple">quadratic_equation(<span class="blue">3,2,1</span>)</span>   <span class="comments"># returns a function object which impersonates the mathematical function of 3x**2 + 2x + 1</span><br/>
+                    <br/>                    
+                    <span class="lineComments"># now let's pass the values of 1,2 and 3 to the function f</span>
+                    <span class="purple">print(<span class="blue">f(<span class="green">0</span>)</span>)</span> <span class="comments"># returns 1</span><br/>
+                    <span class="purple">print(<span class="blue">f(<span class="green">1</span>)</span>)</span> <span class="comments"># returns 6</span><br/>
+                    <span class="purple">print(<span class="blue">f(<span class="green">2</span>)</span>)</span> <span class="comments"># returns 17</span><br/>
+                    <br/>
+                    <span class="lineComments"># you can manually check the result values by using the values of 1,2 and 3 for the equation of 3x**2 + 2x + 1</span>
+                </code>
+            </div>
+            <div class="results-box">
+                <code>
+                    1<br/>
+                    6<br/>
+                    17<br/>
+                </code>
+            </div>
+            <h3 class="content-box">That's it for this bit...See you in the next tutorial...Until then a <b><em>H3avren</em></b> style Ta-Da...</h3>
+        </div>
+        <!--end of content block 2-->
+
+        <!--footer section-->
+        <footer>
+            <span class="footer"><a class="footer" href="https://www.github.com/Ajay-Singh-Rana">@h3avren</a>
+        </footer>
+        <!--end of footer section-->
+    </body>
+</html>
