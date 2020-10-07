@@ -16,5 +16,78 @@
     </head>
     <body>
 
+        <!--navbar-->
+        <nav id="navbar">
+            <a class="navbar" href="../../home.html">Home</a>
+            <a class="navbar" href="../../python_basics/intro.html">Pandas</a>
+            <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+            <a class="navbar" href="../../matplotlib/intro.html">Matplotlib</a>
+            <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <!--end of navbar-->
+
+        <!--title block-->
+        <div class="content-box">
+            <h1 class="title">Generator Functions</h1>
+            <h3 class="heading">Definition</h3>
+            <p>These are functions which implement iterators.These functions use a <b>yield</b> statement instead of a return statement.<br/>
+            The yield statement tells the interpreter to store local variables and record the current position in the generator. <br/>
+            This helps to resume from that stored location when the next call is made to the generator.
+            </p>
+        </div>
+        <!--end of title block-->
+        
+        <!--content block 1-->
+        <div class="content-box">
+            <h3 class="heading">Syntax</h3>
+            <div class="small-snippet">
+                <code>
+                <span class="orange">def</span> <span class="purple">generator_name()</span><span class='orange'>:</span><br/>
+                <span class="orange tab">yield</span> x <span class="comments"># expression to be evaluated when next() is called on a generator
+                </code>
+            </div>
+            <h3 class="heading">Example Function</h3>
+            <p>Let's make a generator that generates numbers from 1 to 9.</p>
+        </div>
+        <!--end of content block 1-->
+
+        <!--code block 1-->
+        <div>
+            <div class="small-snippet-2">
+                <code>
+                    <span class="orange">def</span> <span class="purple">num_generator()</span><span class="orange">:</span><br/>
+                    <span class="orange">for</span> j <span class="orange">in</span> <span class="purple">range(<span class="blue">10</span>)</span><span class="orange">:</span><br/>
+                        <span class="orange tab">yield</span> j<br/>
+                    <br/>
+                    a = <span class="purple">num_generator()</span><br/>
+                    <span class="orange">for</span> i <span class="orange">in</span> a<span class="orange">:</span>  <span class="comments"># we can also iterate a generator using a for loop just like a list</span><br/>
+                        <span class="purple tab">print(i)</span>
+                </code>
+            </div>
+            <div class="results-box">
+                <code>
+                    1<br/>
+                    2<br/>
+                    3<br/>
+                    4<br/>
+                    5<br/>
+                    6<br/>
+                    7<br/>
+                    8<br/>
+                    9<br/>
+                </code>
+            </div>
+        </div>
+        <!--end of code block 1-->
+
+        <!--content block 2-->
+        <div class="content-box">
+            <h3 class="heading">Benefits of using Generators</h3>
+            <p>
+            These use <b>low memory</b> as these generate on demand values.As values are lazily generated we can use any value without having to wait for all the values.<br/>
+            There comes a disadvantage with generators and that is we can use the set of generated values only once.
+            </p>
+        </div>
+        <!--end of content block 2-->
     </body>
 </html>
