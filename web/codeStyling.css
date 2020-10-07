@@ -72,7 +72,22 @@
     overflow : auto;
 }
 
-/* style 1 for the output area */
+.small-snippet-2{
+    background-color : rgba(35, 65, 57, 0.2);
+    border-left : 3px Solid lightseagreen;
+    padding : 10px;
+    padding-left : 20px;
+    margin : 10px;
+    margin-left : 50px;
+    max-width : 600px;
+    font-size : 14px;
+    font-weight : bold;
+    font-style : italic;
+    color : rgba(0,0,0,0.7);
+    overflow : auto;
+}
+
+    /* style 1 for the output area */
 .results-box{
     background-color : rgba(12,34,255,0.2);
     font-size : 14px;
