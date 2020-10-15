@@ -1,0 +1,534 @@
+<!--h3avren-->
+<!--K@m@lesh-->
+<!--DOCTYPE html-->
+<html lang="en-US">
+    <head>
+        <title>
+            The help() and dir() Functions
+        </title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <!--stylesheets-->
+        <link href="../../codeStyling.css" type="text/css" rel="stylesheet"/>
+        <link href="../../webElements.css" type="text/css" rel="stylesheet"/>
+        <!--stylesheet-->
+    </head>
+    <body>
+
+       <!--navbar-->
+       <nav id="navbar">
+        <a class="navbar" href="../../home.html">Home</a>
+        <a class="navbar" href="../../python_basics/intro.html">Pandas</a>
+        <a class="navbar" href="../../numpy/intro.html">Numpy</a>
+        <a class="navbar" href="../../matplotlib/intro.html">Matplotlib</a>
+        <a class="navbar" href="../../tk/tkinter_intro.html">Tkinter</a>
+        </nav>
+        <!--end of navbar-->
+
+        <!--title block-->
+        <div class="content-box">
+            <h1 class="title">
+                The help() and dir() Functions
+            </h1>
+            <div class="downloadSection">
+                <a href="generators.ipynb" download=""><img alt="Jupyter" title="Download Jupyter Notebook"  src="../../images/jupyter.svg"/></a>
+                <a href="generators.py" download=""><img alt="Python" title="Download Python Code" src="../../images/python-brands.svg"/></a>
+            </div>
+            <p>Today, we are gonna learn about two most useful functions in Python...the <b>help()</b> and the <b>dir()</b> functions.Let's start with <b>help()</b> function first.</p>
+            <h3 class="heading">
+                What does the <b>help()</b> function provide us with?
+            </h3>
+            <ul>
+                <li>This is a wrapper around pydoc.help that provides a helpful message when <b>'help'</b> is typed at the Python interactive prompt.</li>
+                <li>Calling <b>help()</b> at the Python prompt starts an interactive help session.</li>
+                <li>Calling <b>help(thing)</b> prints help for the python object 'thing'.</li>
+            </ul>
+            <p>Enough of those heavy words...In Simple words:<br/>
+            The <b>help()</b> function is a function that provides us with some basic documentation (docstrings) on Python objects,modules,functions and classes. This documentation helps us know about how to use that object or module or function or what functionality that class provides us with. Let's see it in action with the time module of Python.
+            </p>
+            <h4>Note: Don't use the parenthesis () when taking help on a function, just pass its name.</h4>
+        </div>
+        <!--end of title block-->
+
+        <!--code block 1-->
+        <div>
+            <div class="code-box">
+                <code>
+                    <span class="purple">import</span> <span class="orange">time</span> <span class="comments"># importing time</span><br/>
+                    <span class="orange">print(<span class="purple">help(<span class="blue">time</span>)</span>)</span>   <span class="comments"># using the help() function to access the documentation on the time module</span>
+                </code>
+            </div>
+            <div class="results-box">
+                <pre>
+Help on built-in module time:
+
+NAME
+    time - This module provides various functions to manipulate time values.
+
+DESCRIPTION
+    There are two standard representations of time.  One is the number
+    of seconds since the Epoch, in UTC (a.k.a. GMT).  It may be an integer
+    or a floating point number (to represent fractions of seconds).
+    The Epoch is system-defined; on Unix, it is generally January 1st, 1970.
+    The actual value can be retrieved by calling gmtime(0).
+    
+    The other representation is a tuple of 9 integers giving local time.
+    The tuple items are:
+        year (including century, e.g. 1998)
+        month (1-12)
+        day (1-31)
+        hours (0-23)
+        minutes (0-59)
+        seconds (0-59)
+        weekday (0-6, Monday is 0)
+        Julian day (day in the year, 1-366)
+        DST (Daylight Savings Time) flag (-1, 0 or 1)
+    If the DST flag is 0, the time is given in the regular time zone;
+    if it is 1, the time is given in the DST time zone;
+    if it is -1, mktime() should guess based on the date and time.
+
+CLASSES
+    builtins.tuple(builtins.object)
+        struct_time
+    
+    class struct_time(builtins.tuple)
+        |  struct_time(iterable=(), /)
+        |  
+        |  The time value as returned by gmtime(), localtime(), and strptime(), and
+        |  accepted by asctime(), mktime() and strftime().  May be considered as a
+        |  sequence of 9 integers.
+        |  
+        |  Note that several fields' values are not the same as those defined by
+        |  the C language standard for struct tm.  For example, the value of the
+        |  field tm_year is the actual year, not year - 1900.  See individual
+        |  fields' descriptions for details.
+        |  
+        |  Method resolution order:
+        |      struct_time
+        |      builtins.tuple
+        |      builtins.object
+        |  
+        |  Methods defined here:
+        |  
+        |  __reduce__(...)
+        |      Helper for pickle.
+        |  
+        |  __repr__(self, /)
+        |      Return repr(self).
+        |  
+        |  ----------------------------------------------------------------------
+        |  Static methods defined here:
+        |  
+        |  __new__(*args, **kwargs) from builtins.type
+        |      Create and return a new object.  See help(type) for accurate signature.
+        |  
+        |  ----------------------------------------------------------------------
+        |  Data descriptors defined here:
+        |  
+        |  tm_gmtoff
+        |      offset from UTC in seconds
+        |  
+        |  tm_hour
+        |      hours, range [0, 23]
+        |  
+        |  tm_isdst
+        |      1 if summer time is in effect, 0 if not, and -1 if unknown
+        |  
+        |  tm_mday
+        |      day of month, range [1, 31]
+        |  
+        |  tm_min
+        |      minutes, range [0, 59]
+        |  
+        |  tm_mon
+        |      month of year, range [1, 12]
+        |  
+        |  tm_sec
+        |      seconds, range [0, 61])
+        |  
+        |  tm_wday
+        |      day of week, range [0, 6], Monday is 0
+        |  
+        |  tm_yday
+        |      day of year, range [1, 366]
+        |  
+        |  tm_year
+        |      year, for example, 1993
+        |  
+        |  tm_zone
+        |      abbreviation of timezone name
+        |  
+        |  ----------------------------------------------------------------------
+        |  Data and other attributes defined here:
+        |  
+        |  n_fields = 11
+        |  
+        |  n_sequence_fields = 9
+        |  
+        |  n_unnamed_fields = 0
+        |  
+        |  ----------------------------------------------------------------------
+        |  Methods inherited from builtins.tuple:
+        |  
+        |  __add__(self, value, /)
+        |      Return self+value.
+        |  
+        |  __contains__(self, key, /)
+        |      Return key in self.
+        |  
+        |  __eq__(self, value, /)
+        |      Return self==value.
+        |  
+        |  __ge__(self, value, /)
+        |      Return self>=value.
+        |  
+        |  __getattribute__(self, name, /)
+        |      Return getattr(self, name).
+        |  
+        |  __getitem__(self, key, /)
+        |      Return self[key].
+        |  
+        |  __getnewargs__(self, /)
+        |  
+        |  __gt__(self, value, /)
+        |      Return self>value.
+        |  
+        |  __hash__(self, /)
+        |      Return hash(self).
+        |  
+        |  __iter__(self, /)
+        |      Implement iter(self).
+        |  
+        |  __le__(self, value, /)
+        |      Return self<=value.
+        |  
+        |  __len__(self, /)
+        |      Return len(self).
+        |  
+        |  __lt__(self, value, /)
+        |      Return self<value.
+        |  
+        |  __mul__(self, value, /)
+        |      Return self*value.
+        |  
+        |  __ne__(self, value, /)
+        |      Return self!=value.
+        |  
+        |  __rmul__(self, value, /)
+        |      Return value*self.
+        |  
+        |  count(self, value, /)
+        |      Return number of occurrences of value.
+        |  
+        |  index(self, value, start=0, stop=9223372036854775807, /)
+        |      Return first index of value.
+        |      
+        |      Raises ValueError if the value is not present.
+
+FUNCTIONS
+    asctime(...)
+        asctime([tuple]) -> string
+        
+        Convert a time tuple to a string, e.g. 'Sat Jun 06 16:26:11 1998'.
+        When the time tuple is not present, current time as returned by localtime()
+        is used.
+    
+    clock_getres(...)
+        clock_getres(clk_id) -> floating point number
+        
+        Return the resolution (precision) of the specified clock clk_id.
+    
+    clock_gettime(...)
+        clock_gettime(clk_id) -> float
+        
+        Return the time of the specified clock clk_id.
+    
+    clock_gettime_ns(...)
+        clock_gettime_ns(clk_id) -> int
+        
+        Return the time of the specified clock clk_id as nanoseconds.
+    
+    clock_settime(...)
+        clock_settime(clk_id, time)
+        
+        Set the time of the specified clock clk_id.
+    
+    clock_settime_ns(...)
+        clock_settime_ns(clk_id, time)
+        
+        Set the time of the specified clock clk_id with nanoseconds.
+    
+    ctime(...)
+        ctime(seconds) -> string
+        
+        Convert a time in seconds since the Epoch to a string in local time.
+        This is equivalent to asctime(localtime(seconds)). When the time tuple is
+        not present, current time as returned by localtime() is used.
+    
+    get_clock_info(...)
+        get_clock_info(name: str) -> dict
+        
+        Get information of the specified clock.
+    
+    gmtime(...)
+        gmtime([seconds]) -> (tm_year, tm_mon, tm_mday, tm_hour, tm_min,
+                                tm_sec, tm_wday, tm_yday, tm_isdst)
+        
+        Convert seconds since the Epoch to a time tuple expressing UTC (a.k.a.
+        GMT).  When 'seconds' is not passed in, convert the current time instead.
+        
+        If the platform supports the tm_gmtoff and tm_zone, they are available as
+        attributes only.
+    
+    localtime(...)
+        localtime([seconds]) -> (tm_year,tm_mon,tm_mday,tm_hour,tm_min,
+                                    tm_sec,tm_wday,tm_yday,tm_isdst)
+        
+        Convert seconds since the Epoch to a time tuple expressing local time.
+        When 'seconds' is not passed in, convert the current time instead.
+    
+    mktime(...)
+        mktime(tuple) -> floating point number
+        
+        Convert a time tuple in local time to seconds since the Epoch.
+        Note that mktime(gmtime(0)) will not generally return zero for most
+        time zones; instead the returned value will either be equal to that
+        of the timezone or altzone attributes on the time module.
+    
+    monotonic(...)
+        monotonic() -> float
+        
+        Monotonic clock, cannot go backward.
+    
+    monotonic_ns(...)
+        monotonic_ns() -> int
+        
+        Monotonic clock, cannot go backward, as nanoseconds.
+    
+    perf_counter(...)
+        perf_counter() -> float
+        
+        Performance counter for benchmarking.
+    
+    perf_counter_ns(...)
+        perf_counter_ns() -> int
+        
+        Performance counter for benchmarking as nanoseconds.
+    
+    process_time(...)
+        process_time() -> float
+        
+        Process time for profiling: sum of the kernel and user-space CPU time.
+    
+    process_time_ns(...)
+        process_time() -> int
+        
+        Process time for profiling as nanoseconds:
+        sum of the kernel and user-space CPU time.
+    
+    pthread_getcpuclockid(...)
+        pthread_getcpuclockid(thread_id) -> int
+        
+        Return the clk_id of a thread's CPU time clock.
+    
+    sleep(...)
+        sleep(seconds)
+        
+        Delay execution for a given number of seconds.  The argument may be
+        a floating point number for subsecond precision.
+    
+    strftime(...)
+        strftime(format[, tuple]) -> string
+        
+        Convert a time tuple to a string according to a format specification.
+        See the library reference manual for formatting codes. When the time tuple
+        is not present, current time as returned by localtime() is used.
+        
+        Commonly used format codes:
+        
+        %Y  Year with century as a decimal number.
+        %m  Month as a decimal number [01,12].
+        %d  Day of the month as a decimal number [01,31].
+        %H  Hour (24-hour clock) as a decimal number [00,23].
+        %M  Minute as a decimal number [00,59].
+        %S  Second as a decimal number [00,61].
+        %z  Time zone offset from UTC.
+        %a  Locale's abbreviated weekday name.
+        %A  Locale's full weekday name.
+        %b  Locale's abbreviated month name.
+        %B  Locale's full month name.
+        %c  Locale's appropriate date and time representation.
+        %I  Hour (12-hour clock) as a decimal number [01,12].
+        %p  Locale's equivalent of either AM or PM.
+        
+        Other codes may be available on your platform.  See documentation for
+        the C library strftime function.
+    
+    strptime(...)
+        strptime(string, format) -> struct_time
+        
+        Parse a string to a time tuple according to a format specification.
+        See the library reference manual for formatting codes (same as
+        strftime()).
+        
+        Commonly used format codes:
+        
+        %Y  Year with century as a decimal number.
+        %m  Month as a decimal number [01,12].
+        %d  Day of the month as a decimal number [01,31].
+        %H  Hour (24-hour clock) as a decimal number [00,23].
+        %M  Minute as a decimal number [00,59].
+        %S  Second as a decimal number [00,61].
+        %z  Time zone offset from UTC.
+        %a  Locale's abbreviated weekday name.
+        %A  Locale's full weekday name.
+        %b  Locale's abbreviated month name.
+        %B  Locale's full month name.
+        %c  Locale's appropriate date and time representation.
+        %I  Hour (12-hour clock) as a decimal number [01,12].
+        %p  Locale's equivalent of either AM or PM.
+        
+        Other codes may be available on your platform.  See documentation for
+        the C library strftime function.
+    
+    thread_time(...)
+        thread_time() -> float
+        
+        Thread time for profiling: sum of the kernel and user-space CPU time.
+    
+    thread_time_ns(...)
+        thread_time() -> int
+        
+        Thread time for profiling as nanoseconds:
+        sum of the kernel and user-space CPU time.
+    
+    time(...)
+        time() -> floating point number
+        
+        Return the current time in seconds since the Epoch.
+        Fractions of a second may be present if the system clock provides them.
+    
+    time_ns(...)
+        time_ns() -> int
+        
+        Return the current time in nanoseconds since the Epoch.
+    
+    tzset(...)
+        tzset()
+        
+        Initialize, or reinitialize, the local timezone to the value stored in
+        os.environ['TZ']. The TZ environment variable should be specified in
+        standard Unix timezone format as documented in the tzset man page
+        (eg. 'US/Eastern', 'Europe/Amsterdam'). Unknown timezones will silently
+        fall back to UTC. If the TZ environment variable is not set, the local
+        timezone is set to the systems best guess of wallclock time.
+        Changing the TZ environment variable without calling tzset *may* change
+        the local timezone used by methods such as localtime, but this behaviour
+        should not be relied on.
+
+DATA
+    CLOCK_MONOTONIC = 1
+    CLOCK_MONOTONIC_RAW = 4
+    CLOCK_PROCESS_CPUTIME_ID = 2
+    CLOCK_REALTIME = 0
+    CLOCK_THREAD_CPUTIME_ID = 3
+    altzone = -19800
+    daylight = 0
+    timezone = -19800
+    tzname = ('IST', 'IST')
+
+FILE
+    (built-in)
+
+
+None                   
+                </pre>
+            </div>
+        </div>
+        <!--end of code block 1-->
+        
+        <!--content block-->
+        <div class="content-box">
+            <p>All that which appears above on the screen is the documentation on the time module and is pulled out by parsing the doctrings of that module. Now, let us see what the dir() function has to offer.</p>
+            <h3 class="heading">The <b>dir()</b> function</h3>
+            <p>The <b>dir()</b> function according to </b>it's documentation pulled out using the <b>help()</b> function :</p>
+            <ul>
+                <li>for a module object: the module's attributes.</li>
+                <li>for a class object:  its attributes, and recursively the attributes of its bases.</li>
+                <li>for any other object: its attributes, its class's attributes, and recursively the attributes of its class's base classes.</li>
+            </ul>
+            <p>Enough of those heavy words...Simply, the <b>dir()</b> function lists all the attributes,constants,functions and classes that are available to use with the module/class/object. Let's now see it in action...we'll use it on the time module.</p>
+        </div>
+        <!--end of content block-->
+
+        <!--code block 2-->
+        <div>
+            <div class="small-snippet">
+                <code>
+                    <span class="purple">dir(<span class="blue">time</span>)</span>   <span class="comments"># lists all the functions,attributes and classes available for use</span>
+                </code>
+            </div>
+            <div class="results-box-2">
+                <pre>
+
+['CLOCK_MONOTONIC','CLOCK_MONOTONIC_RAW','CLOCK_PROCESS_CPUTIME_ID',
+'CLOCK_REALTIME','CLOCK_THREAD_CPUTIME_ID','_STRUCT_TM_ITEMS','__doc__',
+'__loader__','__name__','__package__','__spec__','altzone','asctime',
+'clock_getres','clock_gettime','clock_gettime_ns','clock_settime',
+'clock_settime_ns','ctime','daylight','get_clock_info','gmtime',
+'localtime','mktime','monotonic','monotonic_ns','perf_counter',
+'perf_counter_ns','process_time','process_time_ns',
+'pthread_getcpuclockid','sleep','strftime','strptime','struct_time',
+'thread_time','thread_time_ns','time','time_ns'timezone',
+'tzname','tzset']                    
+                </pre>
+            </div>
+        </div>
+        <!--end of code block 2-->
+
+        <!--content box 2-->
+        <div>
+            <div class="content-box">
+                <p>All those names in all small-caps are functions. So, let's use the <b>help()</b> function on one of these functions to see what it does. Let's use it on the time function.</p>
+            </div>
+            <div class="small-snippet">
+                <code>
+                    <span class="purple">help(<span class="orange">time.<span class="blue">time</span>)</span>
+                </code>
+            </div>
+            <div class="results-box">
+                <pre>
+Help on built-in function time in module time:
+
+time(...)
+    time() -> floating point number
+    
+    Return the current time in seconds since the Epoch.
+    Fractions of a second may be present if the system clock provides
+    them.
+                </pre>
+            </div>
+            <p class="content-box">So, the <b>help()</b> says that to the <b>time.time</b> function returns the current time in seconds since the <b>Epoch</b>. So, let's check it out.</p>
+            <div class="small-snippet-2">
+                <code>
+                    <span class="orange">time.<span class="blue">time()</span></span>
+                </code>
+            </div>
+            <div class="results-box-2">
+                <code>1602674170.0587213</code>
+            </div>
+            <p class="content-box" style="line-height:25px;">Whoa..! it does what the help() says. This is enough for demonstrating the power of the help() and the dir() functions.<br/> 
+            We can learn about any module/function/class/object just by using these. Also, this shows us how important the doctstrings are.<br/> 
+            These are the ones which get parsed to pop all this help on our screens.So, it is always good to use doctrings in our classes/modules/functions.<br/>
+            Cause these might help many other people to learn about our functions/classes/modules. Also, these are a great reminder to self.</p>
+        </div>
+        <!--end of content box 2-->
+
+        <!--footer-->
+        <footer>
+                <span class="footer"><a class="footer" href="https://www.github.com/Ajay-Singh-Rana">@h3avren</a><a class="footer" href="">@kamlesh</a></span>
+        </footer>
+        <!--end of footer-->
+
+    </body>
+</html>
